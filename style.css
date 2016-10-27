@@ -1,0 +1,84 @@
+/*
+  MUiD CSS Styles
+  Written by Jens Alexander Ewald
+  Based on a design by Martin Postler
+  Licensed under GPL/CC
+  Muthesius Academy of Fine Art & Design, 2016
+ */
+.muid.tiny {
+  font-size: 16px; }
+.muid.small {
+  font-size: 32px; }
+.muid.medium {
+  font-size: 64px; }
+.muid.large {
+  font-size: 128px; }
+.muid.big {
+  font-size: 256px; }
+.muid.logo, .muid .logo {
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  overflow: hidden;
+  display: block; }
+  .muid.logo .m, .muid.logo .u, .muid.logo .i, .muid.logo .d, .muid .logo .m, .muid .logo .u, .muid .logo .i, .muid .logo .d {
+    font-size: 50%;
+    float: left; }
+.muid.inline .m, .muid.inline .u, .muid.inline .i, .muid.inline .d, .muid.inline.m, .muid.inline.u, .muid.inline.i, .muid.inline.d {
+  vertical-align: middle;
+  margin-left: .12em;
+  margin-right: .12em; }
+.muid.m, .muid.u, .muid.i, .muid.d,
+.muid .m, .muid .u, .muid .i, .muid .d {
+  display: inline-block;
+  border-width: 0.0325em;
+  border-style: solid;
+  border-color: #011E42;
+  background-color: #011E42;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  position: relative; }
+  .muid.m, .muid.m *, .muid.u, .muid.u *, .muid.i, .muid.i *, .muid.d, .muid.d *,
+  .muid .m,
+  .muid .m *, .muid .u, .muid .u *, .muid .i, .muid .i *, .muid .d, .muid .d * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transform-style: preserve-3d; }
+  .muid.m:after, .muid.m:before, .muid.u:after, .muid.u:before, .muid.i:after, .muid.i:before, .muid.d:after, .muid.d:before,
+  .muid .m:after,
+  .muid .m:before, .muid .u:after, .muid .u:before, .muid .i:after, .muid .i:before, .muid .d:after, .muid .d:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    background-color: #FFFFFF; }
+.muid.m:after, .muid.m:before, .muid .m:after, .muid .m:before {
+  width: 100%;
+  height: 21%; }
+.muid.m:after, .muid .m:after {
+  transform-origin: center right;
+  transform: translateY(-50%) rotateZ(-45deg) scale(1.42, 1); }
+.muid.m:before, .muid .m:before {
+  transform-origin: center left;
+  transform: translateY(-50%) rotateZ(45deg) scale(1.42, 1); }
+.muid.u:after, .muid.u:before, .muid .u:after, .muid .u:before {
+  width: 50%;
+  height: 50%; }
+.muid.u:before, .muid .u:before {
+  right: 0; }
+.muid.u:after, .muid .u:after {
+  bottom: 0; }
+.muid.i, .muid .i {
+  background-color: #FFFFFF; }
+  .muid.i:before, .muid .i:before {
+    background-color: #011E42;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    border-radius: 50%; }
+.muid.d:before, .muid .d:before {
+  width: 100%;
+  height: 33.3333333%;
+  top: 33.3333333%; }
