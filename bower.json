@@ -23,5 +23,6 @@
   ],
   "dependencies": {
     "muid-style": "muthesius/muid-style#~1.0.0"
-  }
+  },
+  "version": "0.0.1"
 }
