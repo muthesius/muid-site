@@ -1,0 +1,27 @@
+{
+  "name": "muid-site",
+  "authors": [
+    "jens alexander ewald <jens@lea.io>"
+  ],
+  "description": "MuiD Site Repo",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "muid"
+  ],
+  "license": "GPL",
+  "homepage": "muid.sh",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "muid-style": "muthesius/muid-style#~1.0.0"
+  }
+}
