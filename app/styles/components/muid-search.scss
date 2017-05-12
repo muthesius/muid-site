@@ -1,0 +1,19 @@
+.muid.search-field {
+	padding-right: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	input {
+		flex: 0 1 80%;
+		border-bottom: 1px solid #404;
+		color: lighten(#404, 4.2%);
+	}
+	button {
+		flex: 0 1 1rem;
+	}
+	input, button {
+		line-height: 0.75;
+		font-size: $medium-type;
+		font-weight: lighter;
+	}
+}
