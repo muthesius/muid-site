@@ -50,7 +50,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/muid-moin';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
