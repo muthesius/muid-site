@@ -11,7 +11,7 @@ module.exports = function(deployTarget) {
   ENV.git = {
     repo: 'git@github.com:muthesius/muid-moin.git',
     branch: 'gh-pages',
-    worktreePath: '/tmp/deploy',
+    worktreePath: '/tmp/deploy-muid-site',
     commitMessage: 'Deployed MUiD site version %@'
   };
 
