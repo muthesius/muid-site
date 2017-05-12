@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'muid-site',
+    modulePrefix: 'muid',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -45,7 +45,7 @@ module.exports = function(environment) {
 
   if (environment === 'staging') {
     // Configuration for staging deployment
-    ENV.rootURL = '/muid-site';
+    ENV.rootURL = '/muid-moin';
     ENV.locationType = 'hash';
   }
 
