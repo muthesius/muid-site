@@ -43,6 +43,12 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  if (environment === 'staging') {
+    // Configuration for staging deployment
+    ENV.rootURL = '/muid-site';
+    ENV.locationType = 'hash';
+  }
+
   if (environment === 'production') {
 
   }
