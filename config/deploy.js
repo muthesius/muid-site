@@ -2,15 +2,17 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {}
+    build: {
+      environment: 'development'
+    }
     // include other plugin configuration that applies to all deploy targets here
   };
 
   ENV.git = {
-    repo: 'git@github.com:muthesius/muid-site.git',
-    branch: 'deploys',
+    repo: 'git@github.com:muthesius/muid-moin.git',
+    branch: 'gh-pages',
     worktreePath: '/tmp/deploy',
-    commitMessage: 'Deployed %@'
+    commitMessage: 'Deployed MUiD site version %@'
   };
 
   if (deployTarget === 'development') {
