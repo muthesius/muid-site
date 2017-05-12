@@ -1,10 +1,18 @@
 
 a {
 	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 header * {
 	font-weight: lighter;
+}
+
+nav {
+	font-size: $medium-type * 0.84;
+	line-height: 1.21;
 }
 
 footer {
