@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MOIN@MUiD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="classie.js"></script>
+    <script>
+        function init() {
+            window.addEventListener('scroll', function(e){
+                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 300,
+                typologo = document.getElementById("typologo"),
+                flags = document.getElementById("flags"),
+                header = document.querySelector("header");
+
+            if (distanceY > shrinkOn) {
+                classie.add(flags,"invisible");
+                classie.add(header,"smaller");
+                if (classie.has(typologo,"invisible")){
+                    classie.remove(typologo,"invisible");
+                }
+            } else {
+                if (classie.has(flags,"invisible")) {
+                    classie.remove(flags,"invisible");
+                }
+                if (classie.has(header,"smaller")){
+                    classie.remove(header,"smaller")
+                }
+                classie.add(typologo,"invisible");
+            }
+        });
+        }
+window.onload = init();
+    </script>
+  </head>
+  <body>
+    <header>
+        <div>
+            <div id="flags">
+                <div class="logo"></div>
+                <h1>.muid.sh</h1>
+            </div>
+            <h1 id="typologo" class="invisible">moin.muid.sh</h1>
+        </div>
+        <div class="searchwrapper">
+            <i class="material-icons">search &nbsp;</i>
+            <input class="search" type="text" placeholder="what are you looking for?" autofocus>
+        </div>
+    </header>
+    <div class="stream">
+        <div class="row">
+            <h3>thesis</h3>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2016/03/niqa-05-1-700x897.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2016/03/fin-01-1-700x466.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2016/03/hemolite_01.png">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2016/03/8-1-700x1050.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/02/neues_bild_rubrik_aktuell-700x484.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2015/05/kw-rgb-01-700x990.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <h3>product</h3>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/12/nexbus_01_low-700x465.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/armin_warnecke_valeres_2_300dpi-700x495.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/bild3-700x394.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/diver01-700x394.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/cow_comfy_fotos011-700x394.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/150522_atlas_web_2-700x394.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/2-700x465.png">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2015/07/body_product_unity_01-700x394.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/02/spc_20_04-700x449.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/02/confio03-700x464.jpg">
+            </div>
+            <div class="project">
+                <img src="">
+            </div>
+        </div>
+        <div class="row">
+            <h3>medical</h3>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2015/05/farmor_kontext-fg-kopie-700x990.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/12/kontextbild-aktuell-700x525.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2014/11/folien-mu-website-700x393.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2014/10/ctov-kontext-k-ste-700x349.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2014/10/urban-mining-001-002-seite-12-700x247.jpg">
+            </div>
+            <div class="project">
+                <img src="https://methodisches-entwerfen.muthesius-kunsthochschule.de/wp-content/uploads/sites/23/2014/02/volito1-700x536.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/02/baby_01.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2014/10/brace-03-700x628.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <h3>interface</h3>
+            <div class="project">
+                <img src="https://film.muthesius-kunsthochschule.de/wp-content/uploads/sites/25/2014/10/68b41332-df48-4ddb-8c90-e0133206bd63.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2014/10/2mela-messen-allein1-700x990.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/02/orthese_rammler.jpg">
+            </div>
+            <div class="project">
+                <img src="https://industriedesign-ba.muthesius-kunsthochschule.de/wp-content/uploads/sites/8/2014/10/cwf-kontext-1-700x393.jpg">
+            </div>
+            <div class="project">
+                <img src="https://medical-design.muthesius-kunsthochschule.de/wp-content/uploads/sites/24/2014/02/cos1-700x459.jpg">
+            </div>
+            <div class="project">
+                <img src="https://interface.muthesius-kunsthochschule.de/wp-content/uploads/sites/22/2014/02/ex_world1-700x525.jpg">
+            </div>
+            <div class="project">
+                <img src="https://interface.muthesius-kunsthochschule.de/wp-content/uploads/sites/22/2014/01/biomimikry1-700x994.jpg">
+            </div>
+
+        </div>
+    </div>
+  </body>
+</html>
