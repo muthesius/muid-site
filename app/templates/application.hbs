@@ -11,13 +11,20 @@
 	</div>
 	{{!-- make component --}}
 	<div class="muid search-field">
-		{{input type="search"}}
+		{{input type="search" placeholder="looking for something else" input=(action updateSearch)}}
 		<button>?</button>
 	</div>
 </header>
 
 <section role="main">
-{{outlet}}
+	{{#each facets as |f|}}
+		{{#search-result facet=f base=this as |result|}}
+			{{project-card show=result}}
+		{{else}}
+			Nothing found
+		{{/search-result}}
+	{{/each}}
+	{{outlet}}
 </section>
 
 <footer>

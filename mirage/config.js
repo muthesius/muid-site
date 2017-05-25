@@ -1,5 +1,7 @@
 export default function() {
-
+  this.passthrough(
+    'http://localhost:3000',
+    'http://localhost:3000/**');
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

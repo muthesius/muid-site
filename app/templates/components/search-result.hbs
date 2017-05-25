@@ -1,0 +1,6 @@
+<h3>{{facet}} ({{results.length}})</h3>
+{{#each results as |doc|}}
+	{{yield doc}}
+{{else}}
+	<div class="none">{{yield to="inverse"}}</div>
+{{/each}}
