@@ -9,20 +9,24 @@ export default Ember.Component.extend({
     rawResults: null,
     byScore: ['score'],
     results: Ember.computed.sort('rawResults', 'byScore'),
-    query: Ember.observer('facet', 'base.searchTerm', function() {
+    searchFacet: Ember.computed('facet', function() {
+        return this.get('facet').split(',').map((field) => field.split(':'));
+    }),
+    facetTitle: Ember.computed('searchFacet', function() {
+        return this.get('searchFacet.firstObject')[1];
+    }),
+    query: Ember.observer('searchFacet', 'base.searchTerm', function() {
         const q = this.getWithDefault('base.searchTerm', '').trim();
-        const facet = this.getWithDefault('facet', '');
+        const facet = this.get('searchFacet');
         const fields = {};
         if (facet) {
-            facet.split(',').forEach((field) => {
-                field = field.split(':');
+            facet.forEach((field) => {
                 fields[field[0]] = field[1];
             });
         }
         const params = Ember.$.param({q, fields});
-        let url = `http://localhost:3000?${params}`;
         this.set('loading', true);
-        this.get('ajax').request(url)
+        this.get('ajax').request(`http://localhost:3000?${params}`)
             .then((results) => {
                 Ember.run.later(() => {
                     this.set('rawResults', results);
