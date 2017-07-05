@@ -1,4 +1,6 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+const {computed} = Ember;
 
 export default DS.Model.extend({
 	title: DS.attr(),
@@ -15,7 +17,7 @@ export default DS.Model.extend({
 	awards: DS.attr(),
 	links: DS.attr(),
 
-	posterLink: Ember.computed('links.poster', {
+	posterLink: computed('links.poster', {
 		get() {
 			return `http://localhost:3000/doc/${this.get('id')}/${this.get('links.poster.destination')}`;
 		}

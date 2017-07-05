@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const {
 	inject: { service },
-	on, debug, observer, isNone
+	on, observer, isNone
 } = Ember;
 
 export default Ember.Component.extend({
@@ -12,7 +12,6 @@ export default Ember.Component.extend({
 		this.query();
 	}),
 	query: observer('show', function() {
-		console.log(this.get('show'));
 		const id = this.get('show.ref');
 		if (isNone(id)) {
 			this.set('empty', true);

@@ -18,7 +18,7 @@
 
 <section role="main">
 	{{#each facets as |f|}}
-		{{#search-result facet=f base=this as |result|}}
+		{{#search-result base=this facet=f as |result|}}
 			{{project-card show=result}}
 		{{else}}
 			Nothing found
