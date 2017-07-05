@@ -10,7 +10,7 @@ export default Ember.Component.extend({
     byScore: ['score'],
     results: Ember.computed.sort('rawResults', 'byScore'),
     searchFacet: Ember.computed('facet', function() {
-        return this.get('facet').split(',').map((field) => field.split(':'));
+        return this.getWithDefault('facet', '').split(',').map((field) => field.split(':'));
     }),
     facetTitle: Ember.computed('searchFacet', function() {
         return this.get('searchFacet.firstObject')[1];

@@ -19,7 +19,7 @@ export default DS.Model.extend({
 
 	posterLink: computed('links.poster', {
 		get() {
-			return `http://localhost:3000/doc/${this.get('id')}/${this.get('links.poster.destination')}`;
+			return `http://localhost:3000/doc/${this.get('id')}/${this.get('links.poster.destination')}/square-512`;
 		}
 	})
 });

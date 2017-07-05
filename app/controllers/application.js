@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	facets: [
-		'degree:Bachelor',
-		'degree:Master',
+		'degree:Bachelor,kind:Project',
+		'degree:Master,kind:Project',
 		'kind:Thesis',
-		'keywords:Interface',
-		'keywords:Medical',
+		'keywords:Interface,kind:Project',
+		'keywords:Medical,kind:Project',
 	],
 	updateSearch(event) {
 		this.set('searchTerm', event.target.value);

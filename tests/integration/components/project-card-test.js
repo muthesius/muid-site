@@ -14,12 +14,11 @@ test('it renders', function(assert) {
 
   assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#project-card}}
-      template block text
-    {{/project-card}}
-  `);
+  // // Template block usage:
+  // this.render(hbs`
+  //   {{#project-card}}
+  //   {{/project-card}}
+  // `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  // assert.equal(this.$().text().trim(), '');
 });
