@@ -15,6 +15,9 @@ module.exports = function(environment) {
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
+      },
+      MOIN: {
+        host: "http://localhost:3000"
       }
     },
 
