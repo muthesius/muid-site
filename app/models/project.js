@@ -14,12 +14,12 @@ export default DS.Model.extend({
 	department: DS.attr(),
 	kind: DS.attr(),
 	keywords: DS.attr(),
-	awards: DS.attr(),
 	links: DS.attr(),
 
 	posterLink: computed('links.poster', {
 		get() {
-			return `http://localhost:3000/doc/${this.get('id')}/${this.get('links.poster.destination')}/square-512`;
+			const filename = this.get('links.poster.destination').replace(/attachment(s)?\/?/,'');
+			return `http://localhost:3000/doc/${this.get('id')}/${filename}?version=thumb-small`;
 		}
 	})
 });

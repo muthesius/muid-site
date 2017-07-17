@@ -1,14 +1,14 @@
 <header>
 	{{!-- make component --}}
 	<nav>
-		<a href="#">BA</a>
-		<a href="#">MA</a>
+		{{!-- <a href="#">BA</a> --}}
+		<a href="#">MOIN</a>
 		<a href="#">News</a>
 		<a href="#">Apply</a>
 	</nav>
-	<div class="muid logo">
-		<img src="images/logo/muid-square-flat-small.png">
-	</div>
+
+	{{muid-logo}}
+
 	{{!-- make component --}}
 	<div class="muid search-field">
 		{{input type="search" placeholder="looking for something else" input=(action updateSearch)}}
@@ -29,5 +29,5 @@
 
 <footer>
 	<a href="#">imprint</a>
-	<img src="images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
+	<img src="/images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
 </footer>

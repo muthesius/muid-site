@@ -7,13 +7,20 @@ export default Ember.Component.extend({
         this.query();
     }),
     rawResults: null,
-    byScore: ['score'],
+    byScore: ['score', 'year', 'term'],
     results: Ember.computed.sort('rawResults', 'byScore'),
     searchFacet: Ember.computed('facet', function() {
         return this.getWithDefault('facet', '').split(',').map((field) => field.split(':'));
     }),
     facetTitle: Ember.computed('searchFacet', function() {
         return this.get('searchFacet.firstObject')[1];
+    }),
+    resultIDs: Ember.computed('rawResults', function() {
+        const results = this.get('rawResults');
+        if (!results) return "";
+        return results.reduce((list, res) => {
+            return list += res.ref + "\n";
+        }, "");
     }),
     query: Ember.observer('searchFacet', 'base.searchTerm', function() {
         const q = this.getWithDefault('base.searchTerm', '').trim();

@@ -3,6 +3,7 @@
 #{$ember-base} {
 	display: flex;
 	flex-direction: column;
+	height: 100vh;
 }
 
 header {
@@ -28,8 +29,10 @@ header {
 }
 
 section[role="main"] {
-	flex: 1 0 auto;
+	flex: 0 1 auto;
 	display: flex;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 footer {

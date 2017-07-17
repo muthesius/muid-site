@@ -1,15 +1,20 @@
 import Ember from 'ember';
+const { run : { scheduleOnce } } = Ember;
 
 export default Ember.Controller.extend({
 	facets: [
-		'degree:Bachelor,kind:Project',
-		'degree:Master,kind:Project',
-		'kind:Thesis',
-		'keywords:Interface,kind:Project',
-		'keywords:Medical,kind:Project',
+		'degree:Bachelor',
+		// 'degree:Master,kind:Project',
+		// 'kind:Thesis',
+		'course:Interface',
+		'course:Medical',
+		// 'course:Medical,kind:Project',
 	],
 	updateSearch(event) {
-		this.set('searchTerm', event.target.value);
-		// Ember.run.scheduleOnce('afterRender', this, () => this.set('searchTerm', event.target.value));
+		const { target : { value } } = event;
+		const term = value && value.length > 2 ? value : '';
+		scheduleOnce('afterRender', this, () => {
+			this.set('searchTerm', term);
+		});
 	}
 });

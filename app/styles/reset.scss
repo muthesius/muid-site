@@ -21,11 +21,16 @@ body {
 	overflow: hidden;
 }
 
+figure {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
 #{$ember-base} {
 	overflow-y: scroll;
 	height: 100%;
 }
-
 
 button,
 input,

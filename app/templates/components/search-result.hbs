@@ -1,5 +1,6 @@
 {{#if facetTitle}}
 	<h3>{{facetTitle}} ({{results.length}})</h3>
+	<pre>{{resultIDs}}</pre>
 	{{#each results as |doc|}}
 		{{yield doc}}
 	{{else}}
