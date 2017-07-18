@@ -1,5 +1,6 @@
 import Ember from 'ember';
-const { inject: { service }, run : { scheduleOnce } } = Ember;
+
+const { inject: { service } } = Ember;
 
 export default Ember.Component.extend({
 	classNames: ['muid', 'search-bar'],
