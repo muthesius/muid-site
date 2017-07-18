@@ -6,13 +6,12 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
-	ajax: service(),
 	store: service(),
-	initialLoad: on('didInsertElement', function() {
+	initialLoad: on('didReceiveAttrs', function() {
 		this.query();
 	}),
-	query: observer('show', function() {
-		const id = this.get('show.ref');
+	query: observer('from', function() {
+		const id = this.get('from.ref');
 		if (isNone(id)) {
 			this.set('empty', true);
 		} else {

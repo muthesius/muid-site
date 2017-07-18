@@ -4,15 +4,15 @@
 		<a href="#">News °</a>
 		<a href="#">Apply</a>
 	</nav>
-	{{muid-logo "index"}}
+	{{muid-logo}}
 	{{search-bar placeholder="looking for something else" buttonText="?"}}
 </header>
 
 <section role="main">
 	{{!-- Streams --}}
-	{{#each facets as |f|}}
-		{{#project-stream topic=f as |project|}}
-			{{project-card content=project}}
+	{{#each facets as |facet|}}
+		{{#project-stream topic=facet as |result|}}
+			{{project-card from=result}}
 		{{else}}
 			Nothing found
 		{{/project-stream}}

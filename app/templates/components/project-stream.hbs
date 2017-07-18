@@ -1,8 +1,8 @@
-{{#if facetTitle}}
-	<h3>{{facetTitle}} ({{results.length}})</h3>
+{{#if topicTitle}}
+	<h3>{{topicTitle}} ({{content.length}})</h3>
 	<pre>{{resultIDs}}</pre>
-	{{#each results as |doc|}}
-		{{yield doc}}
+	{{#each content as |project|}}
+		{{yield project}}
 	{{else}}
 		<div class="none">{{yield to="inverse"}}</div>
 	{{/each}}
