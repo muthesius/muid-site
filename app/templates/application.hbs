@@ -1,5 +1,4 @@
 <header>
-	{{!-- make component --}}
 	<nav>
 		<a href="#">About MUiD</a>
 		<a href="#">News °</a>
@@ -10,6 +9,7 @@
 </header>
 
 <section role="main">
+	{{!-- Streams --}}
 	{{#each facets as |f|}}
 		{{#project-stream topic=f as |project|}}
 			{{project-card content=project}}
@@ -17,6 +17,7 @@
 			Nothing found
 		{{/project-stream}}
 	{{/each}}
+	{{!-- Nested Routes --}}
 	{{outlet}}
 </section>
 
