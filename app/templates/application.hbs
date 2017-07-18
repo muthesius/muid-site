@@ -10,8 +10,8 @@
 
 <section role="main">
 	{{!-- Streams --}}
-	{{#each facets as |facet|}}
-		{{#project-stream topic=facet as |result|}}
+	{{#each model.topics as |topic|}}
+		{{#project-stream topic=topic as |result|}}
 			{{project-card from=result}}
 		{{else}}
 			Nothing found

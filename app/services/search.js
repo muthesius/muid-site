@@ -12,8 +12,8 @@ export default Ember.Service.extend({
     query: computed('term', function() {
         return this.parseQuery();
     }),
-    parseQuery(ext) {
-        let term = this.getWithDefault('term', '');
+    parseQuery(ext, plain = false) {
+        const term = plain ? '' : this.getWithDefault('term', '');
         const parsed = parser.parse(ext || '');
         return parsed.getWithDefault('firstObject', []).reduce((query, term) => {
             for (const attr in term) {
@@ -27,8 +27,8 @@ export default Ember.Service.extend({
             return query;
         }, {q:term});
     },
-    runQuery(term) {
-        const query = this.parseQuery(term)
+    runQuery(ext, plain = false) {
+        const query = this.parseQuery(ext, plain)
         if (!query) return Promise.reject();
         const params = $.param(query);
         this.set('loading', true);
