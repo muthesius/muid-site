@@ -1,26 +1,26 @@
 <header>
 	{{!-- make component --}}
 	<nav>
-		<a href="#">BA</a>
-		<a href="#">MA</a>
-		<a href="#">News</a>
+		<a href="#">About MUiD</a>
+		<a href="#">News °</a>
 		<a href="#">Apply</a>
 	</nav>
-	<div class="muid logo">
-		<img src="images/logo/muid-square-flat-small.png">
-	</div>
-	{{!-- make component --}}
-	<div class="muid search-field">
-		{{input type="search"}}
-		<button>?</button>
-	</div>
+	{{muid-logo "index"}}
+	{{search-bar placeholder="looking for something else" buttonText="?"}}
 </header>
 
 <section role="main">
-{{outlet}}
+	{{#each facets as |f|}}
+		{{#project-stream topic=f as |project|}}
+			{{project-card content=project}}
+		{{else}}
+			Nothing found
+		{{/project-stream}}
+	{{/each}}
+	{{outlet}}
 </section>
 
 <footer>
 	<a href="#">imprint</a>
-	<img src="images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
+	<img src="/images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
 </footer>

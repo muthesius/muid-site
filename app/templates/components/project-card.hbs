@@ -1,0 +1,13 @@
+{{#if content.isLoading}}
+	Loading project {{result.ref}}
+{{elseif empty}}
+	Could not load Project
+{{else}}
+	{{!-- <h1>{{model.title}}</h1> --}}
+	{{!-- <h2>{{model.authors}}</h2> --}}
+	{{#link-to 'project.detail' model tagName="figure"}}
+		<img src="{{model.posterLink}}" alt="">
+		{{!-- <caption>{{model.title}}</caption> --}}
+	{{/link-to}}
+	{{!-- <p>{{model.abstract}}</p> --}}
+{{/if}}

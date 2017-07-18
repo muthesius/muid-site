@@ -1,0 +1,7 @@
+.results {
+	flex: 1 1 25%;
+	// overflow-y: auto;
+	img {
+		width: calc(100% - 10px);
+	}
+}

@@ -21,3 +21,9 @@ section[role="main"] {
 footer {
 	background-color: #0ff;
 }
+
+.results {
+	&:nth-child(even) {
+		background-color: rgba(127,127,127,.5);
+	}
+}

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+export default Ember.LinkComponent.extend({
 	version: 'small',
 	type: 'flat',
 	border: false,
