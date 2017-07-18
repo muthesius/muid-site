@@ -10,6 +10,11 @@ Router.map(function() {
   this.route('project', {path: 'p'}, function() {
     this.route('detail', {path: ':id'});
   });
+  this.route('imprint');
+  this.route('apply');
+  this.route('news');
+  this.route('about');
+  this.route('contact');
 });
 
 export default Router;

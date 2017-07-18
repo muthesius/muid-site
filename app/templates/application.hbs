@@ -1,8 +1,8 @@
 <header>
 	<nav>
-		<a href="#">About MUiD</a>
-		<a href="#">News °</a>
-		<a href="#">Apply</a>
+		{{link-to "About MUiD" "about"}}
+		{{link-to "News °" "news"}}
+		{{link-to "Apply" "apply"}}
 	</nav>
 	{{muid-logo}}
 	{{search-bar placeholder="looking for something else" buttonText="?"}}
@@ -24,6 +24,9 @@
 </section>
 
 <footer>
-	<a href="#">imprint</a>
+	{{!-- Social Media here --}}
+	{{!-- contact & imprint should be a pup up --}}
+	{{link-to "Contact Us" "contact"}}
+	{{link-to "Impressum" "imprint"}}
 	<img src="/images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
 </footer>
