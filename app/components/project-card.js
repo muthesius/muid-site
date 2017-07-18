@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 			this.set('empty', true);
 		} else {
 			this.get('store').findRecord('project', id)
-				.then(project => this.set('model', project));
+				.then(project => this.set('content', project));
 		}
 	})
 

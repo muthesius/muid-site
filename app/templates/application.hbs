@@ -8,17 +8,19 @@
 	{{search-bar placeholder="looking for something else" buttonText="?"}}
 </header>
 
-<section role="main">
-	{{!-- Streams --}}
-	{{#each model.topics as |topic|}}
-		{{#project-stream topic=topic as |result|}}
-			{{project-card from=result}}
-		{{else}}
-			Nothing found
-		{{/project-stream}}
-	{{/each}}
+<section role="main" class="{{if isHome "home" "detail"}}">
 	{{!-- Nested Routes --}}
-	{{outlet}}
+	<article>{{outlet}}</article>
+	{{!-- Streams --}}
+	<section class="overview">
+		{{#each model.topics as |topic|}}
+			{{#project-stream topic=topic as |result|}}
+				{{project-card from=result}}
+			{{else}}
+				Nothing found
+			{{/project-stream}}
+		{{/each}}
+	</section>
 </section>
 
 <footer>
