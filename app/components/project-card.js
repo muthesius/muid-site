@@ -15,7 +15,8 @@ export default Ember.Component.extend({
 		if (isNone(id)) {
 			this.set('empty', true);
 		} else {
-			this.get('store').findRecord('project', id)
+			this.get('store')
+				.findRecord('project', id, {include:"title,authors,abstract,poster"})
 				.then(project => this.set('content', project));
 		}
 	})

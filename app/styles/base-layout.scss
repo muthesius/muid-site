@@ -32,9 +32,14 @@ section[role="main"] {
 	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
+	// overflow: hidden;
 	& > article {
 		flex: 1 0 auto;
+		background-color: #ff0;
+		overflow: auto;
+	}
+	&.detail article {
+		// min-height: 50vh;
 	}
 	& > section {
 		display: flex;
@@ -51,10 +56,11 @@ footer {
 	align-items: center;
 	max-height: 32px;
 	img {
-		display: inline;
 		max-height: inherit;
 	}
 	& > * {
+		max-height: inherit;
+		display: inline;
 		padding: 0 .5rem;
 	}
 }

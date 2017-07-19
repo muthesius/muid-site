@@ -1,14 +1,17 @@
+<section role="info">
+{{outlet "info"}}
+{{outlet "legal"}}
+</section>
 <header>
 	<nav>
-		{{link-to "About MUiD" "about"}}
-		{{link-to "News °" "news"}}
+		{{link-to "About MUiD °" "about"}}
+		{{!-- {{link-to "News °" "news"}} --}}
 		{{link-to "Apply" "apply"}}
 	</nav>
 	{{muid-logo}}
 	{{search-bar placeholder="looking for something else" buttonText="?"}}
 </header>
-
-<section role="main" class="{{if isHome "home" "detail"}}">
+<section role="main" class="{{if isProject "home" "detail"}}">
 	{{!-- Nested Routes --}}
 	<article>{{outlet}}</article>
 	{{!-- Streams --}}
@@ -26,7 +29,10 @@
 <footer>
 	{{!-- Social Media here --}}
 	{{!-- contact & imprint should be a pup up --}}
-	{{link-to "Contact Us" "contact"}}
+	{{!-- {{link-to "Contact Us" "contact"}} --}}
 	{{link-to "Impressum" "imprint"}}
-	<img src="/images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
+	<a href="https://www.muthesius.de" target="blank">
+		<img src="/images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
+	</a>
 </footer>
+{{!-- <section role="legal">{{outlet "legal"}}</section> --}}

@@ -1,7 +1,9 @@
 import DS from 'ember-data';
+import config from 'ember-get-config';
+const { EmberENV: { MOIN } } = config;
 
 export default DS.JSONAPIAdapter.extend({
-    host: 'http://localhost:3000',
+    host: MOIN.host,
     pathForType() {
         return 'doc';
     }

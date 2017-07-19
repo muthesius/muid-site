@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ReRoute from './re';
 
-export default Ember.Route.extend({
+export default ReRoute("info").extend({
 });

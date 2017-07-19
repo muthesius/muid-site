@@ -4,4 +4,22 @@
 	img {
 		width: calc(100% - 10px);
 	}
+	figure {
+		position: relative;
+		&:hover {
+			caption {
+				opacity: 1;
+			}
+		}
+	}
+	caption {
+		transition: opacity .25s ease-out;
+		opacity: 0;
+		position: absolute;
+		bottom: 0;
+		display: block;
+		max-width: inherit;
+		text-align: left;
+		padding: 1rem;
+	}
 }

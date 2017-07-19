@@ -3,11 +3,10 @@
 {{elseif empty}}
 	Could not load Project
 {{else}}
-	{{!-- <h1>{{content.title}}</h1> --}}
-	{{!-- <h2>{{content.authors}}</h2> --}}
-	{{#link-to 'project.detail' content tagName="figure"}}
+	{{#link-to 'project.detail' content.id tagName="figure"}}
 		<img src="{{content.posterLink}}" alt="">
-		{{!-- <caption>{{content.title}}</caption> --}}
+		<caption>
+			{{content.title}}<br>{{content.authors.firstObject}}
+		</caption>
 	{{/link-to}}
-	{{!-- <p>{{content.abstract}}</p> --}}
 {{/if}}

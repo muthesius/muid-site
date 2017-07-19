@@ -17,7 +17,7 @@ module.exports = function(environment) {
         Date: false
       },
       MOIN: {
-        host: "http://localhost:3000"
+        host: "http://helloworld.local:3000"
       }
     },
 
