@@ -1,6 +1,5 @@
 {{#if topicTitle}}
-	<h3>{{topicTitle}} ({{content.length}} / {{searchResults.length}})</h3>
-	<pre>{{resultIDs}}</pre>
+	<h3>{{topicTitle}}</h3>
 	{{#each content as |project|}}
 		{{yield project}}
 	{{else}}

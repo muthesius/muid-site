@@ -1,15 +1,15 @@
-<section class="slides">
-	{{#swiper-container loop=true pagination=true grabCursor=true spaceBetween=5 freeMode=true freeModeSticky=true}}
-		{{#each model.images as |medium|}}
-			{{#swiper-slide}}
-				<img src="{{attachment-url model medium "thumb-large"}}" alt="">
-			{{/swiper-slide}}
-		{{/each}}
-	{{/swiper-container}}
+{{#swiper-container tagName="section" classNames="slides" loop=true pagination=true grabCursor=true spaceBetween=5 freeMode=true freeModeSticky=true}}
+	{{#each model.images as |medium|}}
+		{{#swiper-slide tagName="picture"}}
+			<img src={{attachment-url model medium "thumb-large"}}>
+		{{/swiper-slide}}
+	{{/each}}
+{{/swiper-container}}
+<section class="info">
+	<h1>{{model.title}}</h1>
+	<h2>{{model.authors}}</h2>
+	<section class="abstract">{{model.abstract}}</section>
+	{{#if model.description}}
+		<section class="description">{{model.description}}</section>
+	{{/if}}
 </section>
-<h1>{{model.title}}</h1>
-<h2>{{model.authors}}</h2>
-<section class="abstract">{{model.abstract}}</section>
-{{#if model.description}}
-	<section class="description">{{model.description}}</section>
-{{/if}}

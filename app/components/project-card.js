@@ -6,6 +6,7 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
+	classNames: ['project','card'],
 	store: service(),
 	initialLoad: on('didReceiveAttrs', function() {
 		this.query();

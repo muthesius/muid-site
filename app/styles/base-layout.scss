@@ -1,26 +1,39 @@
 @import "settings";
 
 #{$ember-base} {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
+	// display: flex;
+	// flex-direction: column;
+	// height: 100vh;
 }
+$header-height: 8rem;
 
 header {
-	flex: 0 1 auto;
+	position: fixed;
+
+	background-color: #FFF;
+
+	// flex: 0 1 auto;
 
 	display: flex;
 	flex-direction: row;
-	min-height: 8rem;
-	padding-bottom: 1rem;
 	align-items: flex-end;
+
+	height: $header-height - 2rem;
+	width: 100vw;
+
 	margin-bottom: 1rem;
+	padding: 0 1rem 1rem;
 
 	.logo {
+		// z-index: 1;
 		flex: 0 1 128px;
 		flex-direction: column;
 		align-items: flex-end;
 		margin-bottom: -1rem;
+	}
+
+	.search-bar {
+		z-index: -2;
 	}
 
 	nav, div {
@@ -28,18 +41,24 @@ header {
 	}
 }
 
+$tiptop: $header-height + 2rem;
 section[role="main"] {
-	flex: 1 1 auto;
+	margin: $header-height + 2rem auto;
+	// transition: margin 1s ease-out;
+	&.detail {
+		margin: calc(50vh + 10rem) auto;
+	}
+	max-width: 1920px;
+	// padding: 1rem;
+	// flex: 1 1 auto;
+
 	display: flex;
 	flex-direction: column;
 	// overflow: hidden;
+
 	& > article {
-		flex: 1 0 auto;
-		background-color: #ff0;
+		flex: 1 1 auto;
 		overflow: auto;
-	}
-	&.detail article {
-		// min-height: 50vh;
 	}
 	& > section {
 		display: flex;
@@ -49,7 +68,15 @@ section[role="main"] {
 }
 
 footer {
-	flex: 1 0 auto;
+
+	position: fixed;
+
+	bottom: 1rem;
+	right: 0;
+
+	background-color: #FFF;
+
+	// flex: 1 0 auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -57,10 +84,12 @@ footer {
 	max-height: 32px;
 	img {
 		max-height: inherit;
+		padding: 0.2rem;
 	}
 	& > * {
 		max-height: inherit;
 		display: inline;
 		padding: 0 .5rem;
 	}
+
 }

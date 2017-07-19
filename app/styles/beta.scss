@@ -1,0 +1,20 @@
+body:after{
+  content: "alpha";
+  position: fixed;
+  width: 100px;
+  height: 25px;
+  background: #EE8E4A;
+  background: red;
+  top: 7px;
+  right: -25px;
+  text-align: center;
+  font-size: 13px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  line-height: 27px;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}

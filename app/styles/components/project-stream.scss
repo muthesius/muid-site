@@ -1,25 +1,38 @@
-.results {
-	flex: 1 1 25%;
+.project-stream {
+	flex: 1 1 20%;
 	// overflow-y: auto;
-	img {
-		width: calc(100% - 10px);
+
+	background-color: #FFF;
+	
+	h3 {
+		padding-left: .2rem;
+		font-weight: lighter;
 	}
-	figure {
-		position: relative;
-		&:hover {
-			caption {
-				opacity: 1;
+
+	.project.card {
+		img {
+			width: calc(100%);
+			display: block;
+		}
+		figure {
+			position: relative;
+			&:hover caption {
+				opacity: 0.8;
 			}
 		}
-	}
-	caption {
-		transition: opacity .25s ease-out;
-		opacity: 0;
-		position: absolute;
-		bottom: 0;
-		display: block;
-		max-width: inherit;
-		text-align: left;
-		padding: 1rem;
+		caption {
+			font-size: 2vmin;
+			background-color: #FFF;
+			transition: opacity .25s ease-in-out;
+			opacity: 0;
+			position: absolute;
+			$pad: 2vmin;
+			top: $pad; bottom: $pad; left: $pad; right: $pad;
+			text-align: center!important;
+			display: block;
+			max-width: inherit;
+			text-align: left;
+			padding-top: 6vmin;
+		}
 	}
 }

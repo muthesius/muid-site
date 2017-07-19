@@ -1,0 +1,36 @@
+.home > article {
+	height: 0;
+}
+.detail > article {
+	height: 50vh;
+}
+
+[role="main"] > article {
+	transition: height .25s;
+
+	overflow: hidden;
+	display: flex;
+	position: fixed;
+	top: 10rem;
+	width: 100%;
+	z-index: 1;
+	background-color: #FFF;
+
+	.slides {
+		flex: 1 1 66%;
+		img {
+			height: inherit;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+	.info {
+		padding: 0 2vmin;
+		flex: 0 1 33%;
+		overflow-y: auto;
+		h1 { font-size: 2rem; margin: 0; }
+		h2 { font-size: 1rem; font-weight: 600; }
+		font-weight: lighter;
+	}
+}

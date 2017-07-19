@@ -4,7 +4,7 @@ const { inject: { service}, computed, computed: {sort}, on, Component, observer,
 export default Component.extend({
     search: service(),
     // store: service(),
-    classNames: ['results'],
+    classNames: ['project-stream'],
     searchResults: [],
     initialLoad: on('didInsertElement', function() {
         this.load();

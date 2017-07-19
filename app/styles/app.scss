@@ -1,7 +1,9 @@
+@import "beta";
 @import "reset";
 @import "typography";
 @import "base-layout";
 nav { @import "nav"; }
+@import "project-detail";
 @import "components/muid-logo";
 @import "components/search-bar";
 @import "components/project-stream";

@@ -11,7 +11,7 @@
 	{{muid-logo}}
 	{{search-bar placeholder="looking for something else" buttonText="?"}}
 </header>
-<section role="main" class="{{if isProject "home" "detail"}}">
+<section role="main" class="{{if isProject "detail" "home"}}">
 	{{!-- Nested Routes --}}
 	<article>{{outlet}}</article>
 	{{!-- Streams --}}
@@ -30,9 +30,9 @@
 	{{!-- Social Media here --}}
 	{{!-- contact & imprint should be a pup up --}}
 	{{!-- {{link-to "Contact Us" "contact"}} --}}
-	{{link-to "Impressum" "imprint"}}
-	<a href="https://www.muthesius.de" target="blank">
-		<img src="/images/muthesius-logo.png" alt="Muthesius Academy of Fine Arts & Design">
+	{{!-- {{link-to "Impressum" "imprint"}} --}}
+	<a href="https://www.muthesius.de" target="blank" class="back-to-mu">
+		<img src="/images/muthesius-logo.svg" alt="Muthesius Academy of Fine Arts & Design">
 	</a>
 </footer>
 {{!-- <section role="legal">{{outlet "legal"}}</section> --}}

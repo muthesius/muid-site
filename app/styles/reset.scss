@@ -1,7 +1,11 @@
 @import "settings";
+[data-ember-action], a, button, input, .link, .project.card {
+  cursor: pointer;
+}
 
 * {
 	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
 }
 
 html, body {
