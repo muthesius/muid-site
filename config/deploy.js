@@ -28,6 +28,12 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
+    ENV.git = {
+      repo: 'git@github.com:muthesius/muid-site.git',
+      branch: 'master',
+      worktreePath: '/tmp/deploy-muid-site-production',
+      commitMessage: 'Deployed MUiD production site version %@'
+    };
   }
 
   // Note: if you need to build some configuration asynchronously, you can return

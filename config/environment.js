@@ -60,10 +60,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
-    ENV.rootURL = '/muid/';
-    ENV.rootURL = '/muid-moin';
-    ENV.locationType = 'hash';
+    ENV.MOIN.host = "https://moin.muid.sh";
+    // ENV.locationType = 'auto';
+    // ENV.rootURL = '/muid/';
+    // ENV.rootURL = '/muid-site';
+    // ENV.rootURL = '/muid-site';
+    // ENV.locationType = 'hash';
   }
 
   return ENV;
