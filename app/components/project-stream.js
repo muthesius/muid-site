@@ -15,7 +15,12 @@ export default Component.extend({
         // this.get('store').query('project', {filter: this.get('topic')}).then((results) => this.set('rawResults', results));
         // To load the inital list of projects search just for the topic
         this.get('search').runQuery(topic, true).then((results) => this.set('results', results));
-        // this.set('results', this.get('search').runQuery(topic));
+    },
+    doSearch() {
+        const topic = this.get('topic');
+        this.get('search').runQuery(topic).then((results) => {
+            this.set('results', results)
+        });
     },
     order: ['score', 'year:desc', 'term:desc', 'kind:desc'],
     content: sort('results', 'order'),
@@ -25,10 +30,11 @@ export default Component.extend({
     onSearch: observer('search.term', function() {
         const term = this.get('search.term');
         if (term && term !== '') {
-            // debug("Updating search results on %s: '%s'", this, this.get('search.term'));
-            run.debounce(this, this.load, 100);
+            debug("Searching for", term)
+            run.debounce(this, this.doSearch, 100);
         } else {
-            this.set('searchResults', [])
+            debug("No search, load projects");
+            run.debounce(this, this.load, 100);
         }
     }),
     resultIDs: Ember.computed('content', function() {

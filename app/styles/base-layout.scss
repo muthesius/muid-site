@@ -9,6 +9,8 @@ $header-height: 8rem;
 
 header {
 	position: fixed;
+	// top: 0;
+	z-index: 1;
 
 	background-color: #FFF;
 
@@ -66,6 +68,15 @@ section[role="main"] {
 		overflow-x: hidden;
 	}
 }
+
+[role="info"] {
+	& > * {
+		padding: 2vmin;
+	}
+	background-color: #FFF;
+	z-index: 1;
+}
+
 
 footer {
 

@@ -1,12 +1,19 @@
 .project-stream {
 	flex: 1 1 20%;
 	// overflow-y: auto;
-	z-index: -2;
+	// z-index: -2;
 	background-color: #FFF;
 	
 	h3 {
-		padding-left: .2rem;
+		padding: 0 .2rem;
 		font-weight: lighter;
+		small {
+			float: right;
+		}
+	}
+
+	.none {
+		padding: 0 1rem;
 	}
 
 	.project.card {
@@ -21,6 +28,7 @@
 			}
 		}
 		caption {
+			pointer-events: none;
 			font-size: 2vmin;
 			background-color: #FFF;
 			transition: opacity .25s ease-in-out;

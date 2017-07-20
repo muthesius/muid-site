@@ -1,8 +1,29 @@
-.home > article {
+[role="main"].home > article {
 	height: 0;
+	padding: 0;
+	margin: 0;
 }
-.detail > article {
+[role="main"].detail > article {
 	height: 50vh;
+}
+
+@media all and (max-width: 600px) and (orientation:portrait) {
+	section[role="main"].detail > article {
+		height: calc(80vh - 3rem) !important;
+		flex-direction: column;
+		top: 6rem;
+		display: block;
+		padding: 4rem 0;
+		padding-top: 0;
+		img {
+			height: 30vh;
+		}
+		.info {
+			margin-top: 1rem;
+			height: auto;
+			margin-bottom: 0rem;
+		}
+	}
 }
 
 [role="main"] > article {
@@ -11,15 +32,17 @@
 	overflow: hidden;
 	display: flex;
 	position: fixed;
-	top: 10rem;
+	top: 6rem;
+	padding: 4rem 0;
 	width: 100%;
 	z-index: 1;
 	background-color: #FFF;
 
 	.slides {
-		flex: 1 1 66%;
+		flex: 1 1 50%;
 		img {
-			height: inherit;
+			// height: auto;
+			max-height: 100%;
 			margin: 0 auto;
 			display: block;
 		}
@@ -27,8 +50,10 @@
 
 	.info {
 		padding: 0 2vmin;
-		flex: 0 1 33%;
+		flex: 0 1 50%;
 		overflow-y: auto;
+		height: calc(100% + 2rem);
+		margin-bottom: -2rem;
 		h1 { font-size: 2rem; margin: 0; }
 		h2 { font-size: 1rem; font-weight: 600; }
 		font-weight: lighter;

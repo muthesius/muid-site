@@ -21,9 +21,18 @@ export default DS.Model.extend({
 	keywords: DS.attr(),
 	links: DS.attr('attachment'),
 	poster: DS.attr(),
-	media: computed('links.[]', function() {
-		return Object.values(this.get('links'))
-				.filter(a => a.type === 'image' || a.type === 'video');
+	media: computed('links', 'links.[]', function() {
+		const values = [];
+		const links = this.get('links');
+		for (const id in links) {
+			if (links.hasOwnProperty(id)) {
+				const a = links[id];
+				if (a.get('type') === 'image' || a.get('type') === 'video') {
+					values.push(a);
+				}
+			}
+		}
+		return values;
 	}),
 	images: computed.filterBy('media.[]', 'type', 'image'),
 	posterLink: computed('links.poster', 'poster', {

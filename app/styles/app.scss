@@ -8,4 +8,44 @@ nav { @import "nav"; }
 @import "components/search-bar";
 @import "components/project-stream";
 
+.home-button {
+	position: relative;
+	height: 1rem;
+	width: 0rem;
+	a:after{
+		position: absolute;
+		top: 0;
+		right: 1rem;
+		display: inline-block;
+		content: "\00d7"; /* This will render the 'X' */
+		font-size: 4rem;
+		line-height: 1rem;
+		color: #555 !important;
+		font-weight: 200;
+	}
+}
+
+@media all and (max-width: 600px) and (orientation:portrait) 
+{
+	header {
+		display: block;
+		padding-top: 1rem;
+		nav {
+			float: left;
+		}
+		.logo {
+			float: right;
+		}
+		.search-bar {
+			display: none;
+			float: right;
+			input {
+			}
+		}
+	}
+    [role="main"] {
+    	display: none;
+    }
+}
+
 // @import "debug";

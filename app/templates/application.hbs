@@ -1,17 +1,17 @@
-<section role="info">
-{{outlet "info"}}
-{{outlet "legal"}}
-</section>
-<header>
+ <header>
 	<nav>
 		{{link-to "About MUiD °" "about"}}
 		{{!-- {{link-to "News °" "news"}} --}}
 		{{link-to "Apply °" "apply"}}
 	</nav>
 	{{muid-logo}}
-	{{search-bar placeholder="looking for something else" buttonText="?"}}
+	{{#if isHome}}
+		{{search-bar placeholder="looking for something else" buttonText="?"}}
+	{{else}}
+		{{home-button}}
+	{{/if}}
 </header>
-<section role="main" class="{{if isProject "detail" "home"}}">
+<section role="main" class="{{if isHome "home" "detail"}}">
 	{{!-- Nested Routes --}}
 	<article>{{outlet}}</article>
 	{{!-- Streams --}}
@@ -20,7 +20,7 @@
 			{{#project-stream topic=topic as |result|}}
 				{{project-card from=result}}
 			{{else}}
-				Nothing found
+				Sorry, nothing found for your search on <i>'{{search.term}}'</i>.
 			{{/project-stream}}
 		{{/each}}
 	</section>

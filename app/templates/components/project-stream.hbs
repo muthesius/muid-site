@@ -1,8 +1,8 @@
 {{#if topicTitle}}
-	<h3>{{topicTitle}}</h3>
+	<h3>{{topicTitle}} <small>{{#if search.loading}}(searching){{/if}}</small></h3>
 	{{#each content as |project|}}
 		{{yield project}}
 	{{else}}
-		<div class="none">{{yield to="inverse"}}</div>
+		<p class="none">{{yield to="inverse"}}</p>
 	{{/each}}
 {{/if}}

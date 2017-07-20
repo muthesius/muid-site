@@ -6,9 +6,7 @@ export default Ember.Route.extend({
 	},
 	setupController(controller) {
 		controller.set('showSlides', false);
-		Ember.run.scheduleOnce('afterRender', controller, function() {
-			this.set('showSlides', true);
-		});
+		Ember.run.scheduleOnce('afterRender', this, () => controller.set('showSlides', true))
 		this._super(...arguments);
 	},
 });
