@@ -21,11 +21,11 @@ export default DS.Model.extend({
 	keywords: DS.attr(),
 	links: DS.attr('attachment'),
 	poster: DS.attr(),
-	media: computed('links', function() {
+	media: computed('links.[]', function() {
 		return Object.values(this.get('links'))
 				.filter(a => a.type === 'image' || a.type === 'video');
 	}),
-	images: computed.filterBy('media', 'type', 'image'),
+	images: computed.filterBy('media.[]', 'type', 'image'),
 	posterLink: computed('links.poster', 'poster', {
 		get() {
 			const link = Ember.Object.create(this.get('links.poster') || this.get('poster'));
