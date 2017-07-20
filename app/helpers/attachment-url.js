@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import config from 'ember-get-config';
 
-const { EmberENV: { MOIN } } = config;
+const { MOIN } = config;
 
 function getLink(link, id, version = "thumb-small") {
 	const filename = link.destination.replace(/attachment(s)?\/?/,'');

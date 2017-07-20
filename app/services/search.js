@@ -2,7 +2,7 @@ import Ember from 'ember';
 import config from 'ember-get-config';
 import parser from 'npm:search-parser';
 
-const { EmberENV: { MOIN } } = config;
+const { MOIN } = config;
 const { computed, inject, $, RSVP: {Promise} } = Ember;
 
 export default Ember.Service.extend({

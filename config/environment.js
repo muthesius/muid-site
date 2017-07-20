@@ -16,15 +16,21 @@ module.exports = function(environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
       },
-      MOIN: {
-        host: "http://helloworld.local:3000"
-      }
+    },
+    MOIN: {
+      // host: "http://helloworld.local:3000"
+      host: "https://moin.muid.sh"
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  // disable mirage
+  ENV['ember-cli-mirage'] = {
+    enabled: false
   };
 
   if (environment === 'development') {
@@ -50,9 +56,12 @@ module.exports = function(environment) {
     // Configuration for staging deployment
     ENV.rootURL = '/muid-moin';
     ENV.locationType = 'hash';
+    ENV.MOIN.host = "https://moin.muid.sh";
   }
 
   if (environment === 'production') {
+    ENV.locationType = 'hash';
+    ENV.rootURL = '/muid/';
     ENV.rootURL = '/muid-moin';
     ENV.locationType = 'hash';
   }

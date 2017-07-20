@@ -25,11 +25,8 @@ export default Component.extend({
     onSearch: observer('search.term', function() {
         const term = this.get('search.term');
         if (term && term !== '') {
-            debug("Updating search results on %s: '%s'", this, this.get('search.term'));
-            const topic = this.get('topic');
-            run.debounce(this, () => {
-                this.get('search').runQuery(topic).then((results) => this.set('searchResults', results));
-            }, 100);
+            // debug("Updating search results on %s: '%s'", this, this.get('search.term'));
+            run.debounce(this, this.load, 100);
         } else {
             this.set('searchResults', [])
         }
