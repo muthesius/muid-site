@@ -2,16 +2,28 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
+import config from 'ember-get-config';
+
+const { MOIN } = config;
+
 moduleForComponent('attachment-url', 'helper:attachment-url', {
   integration: true
 });
 
 // Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+  this.set('source', { id: 'some_thing' });
 
-  this.render(hbs`{{attachment-url inputValue}}`);
+  this.set('attachment', {
+    destination: 'attachments/some_image.png',
+    versions: ["thumb-small.jpg"]
+  });
 
-  assert.equal(this.$().text().trim(), '1234');
+  this.render(hbs`{{attachment-url source attachment}}`);
+
+  assert.equal(
+    this.$().text().trim(),
+    `${MOIN.host}/doc/some_thing/some_image.png?version=thumb-small.jpg`
+  );
 });
 
