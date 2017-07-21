@@ -13,13 +13,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{home-button}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#home-button}}
-      template block text
-    {{/home-button}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

@@ -1,9 +1,7 @@
 import DS from 'ember-data';
 import Ember from 'ember';
-import config from 'ember-get-config';
 import {attachmentUrl} from 'muid/helpers/attachment-url';
 
-const { EmberENV: { MOIN } } = config;
 const {computed} = Ember;
 
 export default DS.Model.extend({
