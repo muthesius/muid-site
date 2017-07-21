@@ -6,9 +6,11 @@ export default Component.extend({
     // store: service(),
     classNames: ['project-stream'],
     searchResults: [],
+    classNameBindings: ['noResults'],
     initialLoad: on('didInsertElement', function() {
         this.load();
     }),
+    noResults: computed.empty('results'),
     load() {
         const topic = this.get('topic');
         // TODO: Make Endpoint at server to query for records directly
