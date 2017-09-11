@@ -9,10 +9,10 @@ module.exports = function(deployTarget) {
   };
 
   ENV.git = {
-    repo: 'git@github.com:muthesius/muid-moin.git',
-    branch: 'gh-pages',
-    worktreePath: '/tmp/deploy-muid-site',
-    commitMessage: 'Deployed MUiD site version %@'
+    repo: 'git@github.com:muthesius/muid-site-staging.git',
+    branch: 'master',
+    worktreePath: './tmp/deploy-muid-site-staging',
+    commitMessage: 'Deployed MUiD site staging version %@'
   };
 
   if (deployTarget === 'development') {
@@ -31,7 +31,7 @@ module.exports = function(deployTarget) {
     ENV.git = {
       repo: 'git@github.com:muthesius/muid-site.git',
       branch: 'master',
-      worktreePath: '/tmp/deploy-muid-site-production',
+      worktreePath: './tmp/deploy-muid-site-production',
       commitMessage: 'Deployed MUiD production site version %@'
     };
   }
