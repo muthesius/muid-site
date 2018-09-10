@@ -32,11 +32,12 @@ export default DS.Model.extend({
 		}
 		return values;
 	}),
-	images: computed.filterBy('media.[]', 'type', 'image'),
+	images: computed.filterBy('media', 'type', 'image'),
 	posterLink: computed('links.poster', 'poster', {
 		get() {
-			const link = Ember.Object.create(this.get('links.poster') || this.get('poster'));
-			return attachmentUrl([this, link]);
+      const link = Ember.Object.create(this.get('links.poster') || this.get('poster'));
+      // return attachmentUrl([this, link]);
+      return link;
 		}
 	})
 });

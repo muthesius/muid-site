@@ -18,7 +18,11 @@ export default Ember.Component.extend({
 		} else {
 			this.get('store')
 				.findRecord('project', id, {include:"title,authors,abstract,poster"})
-				.then(project => this.set('content', project));
+				.then(project => {
+          console.log("projectk poster link", project.posterLink)
+          // this.content = project
+          this.set('content', project)
+        });
 		}
 	})
 
