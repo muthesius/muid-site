@@ -1,12 +1,14 @@
 {{#if showSlides}}
-{{#slide-show slides=model.images as |slide|}}
-	<img src={{attachment-url model slide "thumb-large"}}>
-{{/slide-show}}
+  {{#slide-show slides=model.images as |slide|}}
+    <img src={{attachment-url model.id slide "thumb-large"}}>
+  {{/slide-show}}
 {{/if}}
 <section class="info">
 	<h1>{{model.title}}</h1>
 	<h2>{{model.authors}}</h2>
-	<section class="abstract">{{model.abstract}}</section>
+  {{#if model.abstract}}
+	  <section class="abstract">{{model.abstract}}</section>
+  {{/if}}
 	{{#if model.description}}
 		<section class="description">{{model.description}}</section>
 	{{/if}}
