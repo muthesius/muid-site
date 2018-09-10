@@ -14,7 +14,7 @@ export function attachmentUrl(params) {
     const url = `${MOIN.host}/doc/${project}/${filename}?version=${version}`;
     return url;
 	} catch(err) {
-		console.debug(err)
+		// console.debug(err)
 		return "";
 	}
 }

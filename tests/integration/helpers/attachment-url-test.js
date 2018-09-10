@@ -19,7 +19,7 @@ test('it renders', function(assert) {
     versions: ["thumb-small.jpg"]
   });
 
-  this.render(hbs`{{attachment-url source attachment}}`);
+  this.render(hbs`{{attachment-url source.id attachment}}`);
 
   assert.equal(
     this.$().text().trim(),
