@@ -1,6 +1,5 @@
 import DS from 'ember-data';
 import Ember from 'ember';
-import {attachmentUrl} from 'muid/helpers/attachment-url';
 
 const {computed} = Ember;
 
@@ -35,9 +34,7 @@ export default DS.Model.extend({
 	images: computed.filterBy('media', 'type', 'image'),
 	posterLink: computed('links.poster', 'poster', {
 		get() {
-      const link = Ember.Object.create(this.get('links.poster') || this.get('poster'));
-      // return attachmentUrl([this, link]);
-      return link;
+      return Ember.Object.create(this.get('links.poster') || this.get('poster'));
 		}
 	})
 });

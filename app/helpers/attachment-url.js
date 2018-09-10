@@ -12,10 +12,9 @@ export function attachmentUrl(params) {
 		const version = medium.versions.filter(v => v.indexOf(params[2] || "thumb-small")>=0)[0];
     const filename = medium.destination.replace(/attachment(s)?\/?/,'');
     const url = `${MOIN.host}/doc/${project}/${filename}?version=${version}`;
-    console.debug("Attchment link for %O", params, url)
     return url;
 	} catch(err) {
-		console.error(err)
+		console.debug(err)
 		return "";
 	}
 }
