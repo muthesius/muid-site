@@ -15,7 +15,8 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "version": "npm test"
+    "version": "npm test",
+    "postinstall": "bower install"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^3.0.0",
@@ -64,7 +65,9 @@
   },
   "homepage": "http://muid.sh",
   "main": "ember-cli-build.js",
-  "dependencies": {},
+  "dependencies": {
+    "bower": "^1.8.4"
+  },
   "keywords": [
     "muid",
     "moin",
