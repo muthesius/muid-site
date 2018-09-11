@@ -5,11 +5,25 @@
 	// flex-direction: column;
 	// height: 100vh;
 }
+
+
+// Ember specifics:
+body {
+	overflow: hidden;
+}
+
+#{$ember-base} {
+	// overflow-y: scroll;
+	height: 100%;
+}
+
+
+
 $header-height: 8rem;
 
 header {
 	position: fixed;
-	// top: 0;
+	top: 0;
 	z-index: 1;
 
 	background-color: #FFF;
@@ -62,10 +76,17 @@ section[role="main"] {
 		flex: 1 1 auto;
 		overflow: auto;
 	}
-	& > section {
+	& > section.streams {
 		display: flex;
+		overflow: hidden;
+		// overflow-y: auto;
+		// overflow-x: hidden;
+		// width: 100%;
+		// display: flex;
+	}
+
+	.streams > * {
 		overflow-y: auto;
-		overflow-x: hidden;
 	}
 }
 

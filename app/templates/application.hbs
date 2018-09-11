@@ -15,7 +15,7 @@
 	{{!-- Nested Routes --}}
 	<article>{{outlet}}</article>
 	{{!-- Streams --}}
-	<section class="overview">
+	<section class="streams">
 		{{#each model.topics as |topic|}}
 			{{#project-stream topic=topic as |result|}}
 				{{project-card from=result}}
