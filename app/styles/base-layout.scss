@@ -1,11 +1,5 @@
 @import "settings";
-
-#{$ember-base} {
-	// display: flex;
-	// flex-direction: column;
-	// height: 100vh;
-}
-
+$header-height: 8rem;
 
 // Ember specifics:
 body {
@@ -15,16 +9,15 @@ body {
 #{$ember-base} {
 	// overflow-y: scroll;
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
 
-
-
-$header-height: 8rem;
-
-header {
-	position: fixed;
-	top: 0;
-	z-index: 1;
+#{$ember-base} > header {
+	// position: fixed;
+	// top: 0;
+	// z-index: 1;
 
 	background-color: #FFF;
 
@@ -34,10 +27,9 @@ header {
 	flex-direction: row;
 	align-items: flex-end;
 
-	height: $header-height - 2rem;
 	width: 100vw;
-
-	margin-bottom: 1rem;
+	height: $header-height;
+	// margin-bottom: 1rem;
 	padding: 0 1rem 1rem;
 
 	.logo {
@@ -57,57 +49,44 @@ header {
 	}
 }
 
-$tiptop: $header-height + 2rem;
 section[role="main"] {
-	margin: $header-height + 2rem auto;
-	// transition: margin 1s ease-out;
-	&.detail {
-		margin: calc(50vh + 10rem) auto;
-	}
+	overflow: hidden;
+	// margin: $header-height + 2rem auto;
+  // transition: margin 1s ease-out;
+  height: calc(100vh - #{$header-height});
 	max-width: 1920px;
 	// padding: 1rem;
 	// flex: 1 1 auto;
 
 	display: flex;
 	flex-direction: column;
-	// overflow: hidden;
 
 	& > article {
-		flex: 1 1 auto;
+    flex: 1 1 auto;
 		overflow: auto;
+    margin: calc(50vh + 10rem) auto;
 	}
 	& > section.streams {
 		display: flex;
 		overflow: hidden;
-		// overflow-y: auto;
-		// overflow-x: hidden;
-		// width: 100%;
-		// display: flex;
-	}
-
-	.streams > * {
-		overflow-y: auto;
 	}
 }
 
-[role="info"] {
-	& > * {
-		padding: 2vmin;
-	}
-	background-color: #FFF;
-	z-index: 1;
-}
+// [role="info"] {
+// 	& > * {
+// 		padding: 2vmin;
+// 	}
+// 	background-color: #FFF;
+// 	z-index: 1;
+// }
 
 
 footer {
-
 	position: fixed;
-
 	bottom: 1rem;
-	right: 0;
+  right: 0;
 
 	background-color: #FFF;
-
 	// flex: 1 0 auto;
 	display: flex;
 	flex-direction: row;

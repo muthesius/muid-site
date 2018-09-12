@@ -1,8 +1,10 @@
+<header>
 {{#if topicTitle}}
-	<h3>{{topicTitle}} <small>{{#if search.loading}}(searching){{/if}}</small></h3>
-	{{#each content as |project|}}
-		{{yield project}}
-	{{else}}
-		<p class="none">{{yield to="inverse"}}</p>
-	{{/each}}
+	<h3>{{topicTitle}} {{#if search.loading}}<small>(searching)</small>{{/if}}</h3>
 {{/if}}
+</header>
+{{#each content as |project|}}
+  {{yield project}}
+{{else}}
+  <p class="none">{{yield to="inverse"}}</p>
+{{/each}}
