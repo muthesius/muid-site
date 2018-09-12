@@ -1,8 +1,9 @@
-<header>
-{{#if topicTitle}}
-	<h3>{{topicTitle}} {{#if search.loading}}<small>(searching)</small>{{/if}}</h3>
-{{/if}}
-</header>
+{{#sticky-header}}
+  {{#if topicTitle}}
+	  <h3>{{topicTitle}} {{#if search.loading}}<small>(searching)</small>{{/if}}</h3>
+  {{/if}}
+{{/sticky-header}}
+
 {{#each content as |project|}}
   {{yield project}}
 {{else}}

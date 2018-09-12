@@ -5,8 +5,6 @@ import { on } from '@ember/object/evented';
 import { run } from '@ember/runloop';
 import { sort } from '@ember/object/computed';
 
-import stickybits from 'stickybits';
-
 const debug = console.debug.bind(console)
 
 export default Component.extend({
@@ -15,23 +13,6 @@ export default Component.extend({
     classNames: ['project-stream'],
     searchResults: [],
     classNameBindings: ['noResults'],
-
-    initStickyHeader: on('didInsertElement', function() {
-      this.set('stickyHeader', stickybits(this.element.firstElementChild, {
-        stickyBitsStickyOffset: 0,
-        // useStickyClasses: false,
-        // stickyClass: 'sticky',
-        // stuckClass: 'stuck',
-        // stickyChangeClass: 'sticky-change',
-        // scrollEl: this.element,
-      }));
-    }),
-    ensureStickyHeader: on('didRender', function() {
-      if (this.stickyHeader) this.stickyHeader.update();
-    }),
-    destroyStickHeader: on('willDestroy', function() {
-      if (this.stickyHeader) this.stickyHeader.cleanup();
-    }),
 
     noResults: computed.empty('results'),
     load: on('didInsertElement', function() {
