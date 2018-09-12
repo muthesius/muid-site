@@ -21,6 +21,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^3.0.0",
     "ember-ajax": "^3.1.0",
+    "ember-auto-import": "^1.2.13",
     "ember-browserify": "^1.2.2",
     "ember-cli": "^3.3.0",
     "ember-cli-app-version": "^3.2.0",
@@ -66,7 +67,8 @@
   "homepage": "http://muid.sh",
   "main": "ember-cli-build.js",
   "dependencies": {
-    "bower": "^1.8.4"
+    "bower": "^1.8.4",
+    "stickybits": "^3.5.4"
   },
   "keywords": [
     "muid",
