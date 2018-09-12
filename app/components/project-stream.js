@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import { computed, observer } from '@ember/object';
 import { on } from '@ember/object/evented';
 import { run } from '@ember/runloop';
-import { sort } from '@ember/object/computed';
+import { sort, empty, readOnly } from '@ember/object/computed';
 
 const debug = console.debug.bind(console)
 
@@ -14,7 +14,16 @@ export default Component.extend({
     searchResults: [],
     classNameBindings: ['noResults'],
 
-    noResults: computed.empty('results'),
+    updateOffset: observer('results.length', function() {
+      if (!this.alignTo) return;
+      this.alignTo.trigger(
+        'searchresult',
+        this.topic,
+        this.getWithDefault('results.length', 0)
+      );
+    }),
+
+    noResults: empty('results'),
     load: on('didInsertElement', function() {
         const topic = this.get('topic');
         this.get('search').runQuery(topic, true).then((results) => this.set('results', results));
@@ -24,6 +33,7 @@ export default Component.extend({
         const topic = this.get('topic');
         this.get('search').runQuery(topic).then((results) => this.set('results', results));
     },
+
     order: ['score', 'year:desc', 'term:desc', 'kind:desc'],
     content: sort('results', 'order'),
     topicTitle: computed('topic', function() {

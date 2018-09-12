@@ -1,0 +1,3 @@
+{{#each topics as |topic|}}
+  {{yield topic (component 'project-stream' parent=this)}}
+{{/each}}

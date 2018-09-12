@@ -1,7 +1,8 @@
 {{#sticky-header}}
-  {{#if topicTitle}}
-	  <h3>{{topicTitle}} {{#if search.loading}}<small>(searching)</small>{{/if}}</h3>
-  {{/if}}
+  <h3>
+    {{topicTitle}} {{#if search.loading}}<small>(searching)</small>{{/if}}
+    <span>{{results.length}} || {{offset}}</span>
+  </h3>
 {{/sticky-header}}
 
 {{#each content as |project|}}
