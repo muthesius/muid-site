@@ -1,7 +1,24 @@
-& {
+nav {
 	a {
-		font-weight: 700;
+		font-weight: 200;
 		display: block;
 		line-height: 2rem;
+	}
+}
+
+.home-button {
+	position: relative;
+	height: 1rem;
+	width: 0rem;
+	a:after{
+		position: absolute;
+		top: 0;
+		right: 1rem;
+		display: inline-block;
+		content: "\00d7"; /* This will render the 'X' */
+		font-size: 4rem;
+		line-height: 1rem;
+		color: #555 !important;
+		font-weight: 200;
 	}
 }

@@ -1,0 +1,22 @@
+@media all and (max-width: 600px) and (orientation:portrait)
+{
+	header {
+		display: block;
+		padding-top: 1rem;
+		nav {
+			float: left;
+		}
+		.logo {
+			float: right;
+		}
+		.search-bar {
+			display: none;
+			float: right;
+			input {
+			}
+		}
+	}
+    [role="main"] {
+    	display: none;
+    }
+}

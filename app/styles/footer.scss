@@ -1,0 +1,16 @@
+footer {
+	background-color: #FFF;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	img {
+		max-height: inherit;
+		padding: 0.2rem;
+	}
+	& > * {
+		max-height: inherit;
+		display: inline;
+		padding: 0 .5rem;
+	}
+}
