@@ -68,7 +68,9 @@ section[role="main"] {
 	}
 	& > section.streams {
 		display: flex;
-		overflow: hidden;
+    overflow: hidden;
+    // Make sure it always spans the available height for offset calculations
+    flex: 1 1 auto;
 	}
 }
 

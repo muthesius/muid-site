@@ -15,8 +15,8 @@
 	{{!-- Nested Routes --}}
 	<article>{{outlet}}</article>
 	{{!-- Streams --}}
-  {{#project-streams-container topics=model.topics as |topic stream|}}
-    {{#project-stream topic=topic as |result|}}
+  {{#project-streams-container topics=model.topics as |topic offsets updateOffset|}}
+    {{#project-stream topic=topic onsearch=(action updateOffset) offsets=offsets as |result|}}
       {{project-card from=result}}
     {{else}}
       Sorry, nothing found for your search on <i>'{{search.term}}'</i>.

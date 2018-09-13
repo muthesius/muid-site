@@ -5,21 +5,15 @@ import stickybits from 'stickybits';
 
 export default Component.extend({
   tagName: 'header',
-  initStickyHeader: on('didInsertElement', function () {
+  initStickyHeader: on('didRender', function () {
+    if (this.stickyHeader) this.stickyHeader.cleanup();
     this.set('stickyHeader', stickybits(this.element, {
-      stickyBitsStickyOffset: 0,
-      // useStickyClasses: false,
+      stickyBitStickyOffset: this.get('offset') * -1,
+      // useStickyClasses: true,
       // stickyClass: 'sticky',
       // stuckClass: 'stuck',
       // stickyChangeClass: 'sticky-change',
       // scrollEl: this.element.parentNode,
     }));
-  }),
-  ensureStickyHeader: on('didRender', function () {
-    if (this.stickyHeader) this.stickyHeader.update();
-  }),
-  destroyStickHeader: on('willDestroy', function () {
-    if (this.stickyHeader) this.stickyHeader.cleanup();
-  }),
-
+  })
 });

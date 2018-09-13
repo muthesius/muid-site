@@ -15,12 +15,23 @@ export default Component.extend({
     classNameBindings: ['noResults'],
 
     updateOffset: observer('results.length', function() {
-      if (!this.alignTo) return;
-      this.alignTo.trigger(
-        'searchresult',
+      if (!this.onsearch || typeof this.onsearch !== 'function') return;
+      this.onsearch(
         this.topic,
         this.getWithDefault('results.length', 0)
       );
+    }),
+
+    offset: computed('offsets', {
+      get() {
+        const offset = this.getWithDefault('offsets', {})[this.get('topic')] || 0;
+        try {
+          this.element.style.paddingTop = `${offset}px`;
+        } catch (_) {
+          // not yet in DOM
+        }
+        return offset;
+      }
     }),
 
     noResults: empty('results'),
