@@ -62,9 +62,9 @@ section[role="main"] {
 	flex-direction: column;
 
 	& > article {
-    flex: 1 1 auto;
-		overflow: auto;
-    margin: calc(50vh + 10rem) auto;
+    flex: 0 1 calc(100vh - 26rem);;
+    overflow: auto;
+    width: 100%;
 	}
 	& > section.streams {
 		display: flex;

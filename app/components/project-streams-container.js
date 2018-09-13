@@ -1,5 +1,7 @@
 import Component from '@ember/component';
 import { on } from '@ember/object/evented';
+import { computed } from '@ember/object';
+import { assign } from '@ember/polyfills';
 
 const clamp = (min, max, value) => {
   if (value <= min) return min;
@@ -36,6 +38,24 @@ export default Component.extend({
     },
   },
 
+  useScale: true,
+  offsets: computed('_offsets', 'useScale', {
+    get() {
+      const offsets = this.get('_offsets');
+      if (this.get('useScale')) {
+        return offsets;
+      }
+      const nullOffset = assign({}, offsets);
+      const scale = this.element ? this.element.getBoundingClientRect().height : 1;
+      for (const keytopic in nullOffset) {
+        if (nullOffset.hasOwnProperty(keytopic)) {
+          nullOffset[keytopic] = scale * 0.8;
+        }
+      }
+      return nullOffset;
+    }
+  }),
+
   computeOffsets() {
     const scale = this.element ? this.element.getBoundingClientRect().height : 1;
     const scores = Object.values(this.topicStats).sort((a,b) => a - b)
@@ -46,6 +66,6 @@ export default Component.extend({
       const pos = 1 - position(minScore, maxScore, this.topicStats[topic]);
       stats[topic] = Math.floor(scale * 2/8 + scale * 3/8 * pos)
     }
-    this.set('offsets', stats);
+    this.set('_offsets', stats);
   }
 });
