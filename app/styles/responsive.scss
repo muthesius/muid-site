@@ -12,11 +12,23 @@
 		.search-bar {
 			display: none;
 			float: right;
-			input {
-			}
 		}
 	}
-    [role="main"] {
-    	display: none;
-    }
+
+  section[role="main"].detail > article {
+		height: calc(80vh - 3rem) !important;
+		flex-direction: column;
+		top: 6rem;
+		display: block;
+		padding: 4rem 0;
+		padding-top: 0;
+		img {
+			height: 42vh;
+		}
+		.info {
+			margin-top: 1rem;
+			height: auto;
+			margin-bottom: 0rem;
+		}
+	}
 }
