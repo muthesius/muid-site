@@ -3,9 +3,9 @@ import { inject as service } from '@ember/service';
 import { computed, observer } from '@ember/object';
 import { on } from '@ember/object/evented';
 import { run } from '@ember/runloop';
-import { sort, empty, readOnly } from '@ember/object/computed';
+import { sort, empty } from '@ember/object/computed';
 
-const debug = console.debug.bind(console)
+const debug = () => {}; //console.debug.bind(console)
 
 export default Component.extend({
     search: service(),
