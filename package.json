@@ -15,15 +15,17 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "version": "npm test"
+    "version": "npm test",
+    "postinstall": "bower install"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^3.0.0",
-    "ember-ajax": "^3.1.0",
+    "ember-ajax": "^3.1.1",
+    "ember-auto-import": "^1.2.13",
     "ember-browserify": "^1.2.2",
-    "ember-cli": "^3.3.0",
+    "ember-cli": "^3.4.2",
     "ember-cli-app-version": "^3.2.0",
-    "ember-cli-babel": "^7.1.0",
+    "ember-cli-babel": "^7.1.1",
     "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-deploy": "^1.0.2",
     "ember-cli-deploy-build": "^1.1.1",
@@ -40,7 +42,7 @@
     "ember-cli-sass": "^8.0.1",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
-    "ember-cli-swiper": "^1.0.1",
+    "ember-cli-swiper": "^1.0.2",
     "ember-cli-uglify": "^2.1.0",
     "ember-cli-videojs-shim": "0.1.1",
     "ember-data": "^3.4.0",
@@ -50,9 +52,9 @@
     "ember-is-mobile": "^2.0.5",
     "ember-load-initializers": "^1.1.0",
     "ember-resolver": "^5.0.1",
-    "ember-source": "~3.4.0",
+    "ember-source": "^3.4.1",
     "loader.js": "^4.7.0",
-    "sass": "^1.13.2",
+    "sass": "^1.13.4",
     "search-parser": "^0.1.19"
   },
   "engines": {
@@ -64,7 +66,10 @@
   },
   "homepage": "http://muid.sh",
   "main": "ember-cli-build.js",
-  "dependencies": {},
+  "dependencies": {
+    "bower": "^1.8.4",
+    "stickybits": "^3.5.5"
+  },
   "keywords": [
     "muid",
     "moin",

@@ -1,18 +1,21 @@
 .search-bar {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
+  justify-content: flex-end;
+  align-self: center;
+  position: relative;
+  top: -.25rem;
 	input {
 		flex: 0 1 80%;
 		border-bottom: 1px solid #404;
 		color: lighten(#404, 4.2%);
-		text-align: right;
+    text-align: right;
 	}
 	button {
 		flex: 0 1 1rem;
 	}
 	input, button {
-		line-height: 0.75;
+		// line-height: 0.75;
 		font-size: $medium-type;
 		font-weight: lighter;
 	}

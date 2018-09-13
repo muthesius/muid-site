@@ -1,4 +1,3 @@
-@import "settings";
 [data-ember-action], a, button, input, .link, .project.card {
   cursor: pointer;
 }
@@ -15,25 +14,10 @@ html, body {
 	height: 100%;
 }
 
-html {
-	font-family: 'Helvetica', sans-serif;
-	font-weight: 400;
-}
-
-// Ember specifics:
-body {
-	overflow: hidden;
-}
-
 figure {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-}
-
-#{$ember-base} {
-	overflow-y: scroll;
-	height: 100%;
 }
 
 button,
@@ -46,24 +30,38 @@ input[type="reset"],
 input[type="submit"],
 button[disabled],
 html input[disabled],
-button::-moz-focus-inner,
-input::-moz-focus-inner,
 input[type="checkbox"],
 input[type="radio"],
 input[type="text"],
 input[type="search"],
+:focus,
 {
-    border: none;
-    background-image:none;
-    background-color:transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    border-radius: 0;
+  border: none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
 }
+
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration,
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+}
+
+input {
+  line-height: 1em;
+  height: 1.125em;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline-offset: 0;
 }

@@ -15,15 +15,13 @@
 	{{!-- Nested Routes --}}
 	<article>{{outlet}}</article>
 	{{!-- Streams --}}
-	<section class="overview">
-		{{#each model.topics as |topic|}}
-			{{#project-stream topic=topic as |result|}}
-				{{project-card from=result}}
-			{{else}}
-				Sorry, nothing found for your search on <i>'{{search.term}}'</i>.
-			{{/project-stream}}
-		{{/each}}
-	</section>
+  {{#project-streams-container topics=model.topics useScale=isHome as |topic offsets updateOffset|}}
+    {{#project-stream topic=topic onsearch=(action updateOffset) offsets=offsets as |result|}}
+      {{project-card from=result}}
+    {{else}}
+      Sorry, nothing found for your search on <i>'{{search.term}}'</i>.
+    {{/project-stream}}
+  {{/project-streams-container}}
 </section>
 
 <footer>

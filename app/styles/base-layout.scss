@@ -1,106 +1,64 @@
 @import "settings";
-
-#{$ember-base} {
-	// display: flex;
-	// flex-direction: column;
-	// height: 100vh;
-}
 $header-height: 8rem;
 
-header {
-	position: fixed;
-	// top: 0;
-	z-index: 1;
+// Ember specifics:
+body {
+	overflow: hidden;
+}
 
-	background-color: #FFF;
-
-	// flex: 0 1 auto;
-
+#{$ember-base} {
+	// overflow-y: scroll;
+	height: 100%;
 	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#{$ember-base} > header {
+  display: flex;
 	flex-direction: row;
-	align-items: flex-end;
+  align-items: center;
 
-	height: $header-height - 2rem;
 	width: 100vw;
+	height: $header-height;
+	padding: 1rem 1rem;
 
-	margin-bottom: 1rem;
-	padding: 0 1rem 1rem;
+  background-color: #FFF;
 
 	.logo {
-		// z-index: 1;
+		z-index: 1;
 		flex: 0 1 128px;
-		flex-direction: column;
-		align-items: flex-end;
-		margin-bottom: -1rem;
-	}
-
-	.search-bar {
-		z-index: -2;
 	}
 
 	nav, div {
-		flex: 1 1 50%;
+		flex: 1 1 60%;
 	}
 }
 
-$tiptop: $header-height + 2rem;
 section[role="main"] {
-	margin: $header-height + 2rem auto;
-	// transition: margin 1s ease-out;
-	&.detail {
-		margin: calc(50vh + 10rem) auto;
-	}
+	overflow: hidden;
+  height: calc(100vh - #{$header-height});
 	max-width: 1920px;
-	// padding: 1rem;
-	// flex: 1 1 auto;
 
 	display: flex;
 	flex-direction: column;
-	// overflow: hidden;
 
 	& > article {
-		flex: 1 1 auto;
-		overflow: auto;
+    flex: 0 1 calc(100vh - 26rem);;
+    overflow: auto;
+    width: 100%;
 	}
-	& > section {
+	& > section.streams {
 		display: flex;
-		overflow-y: auto;
-		overflow-x: hidden;
+    overflow: hidden;
+    // Make sure it always spans the available height for offset calculations
+    flex: 1 1 auto;
 	}
 }
-
-[role="info"] {
-	& > * {
-		padding: 2vmin;
-	}
-	background-color: #FFF;
-	z-index: 1;
-}
-
 
 footer {
-
 	position: fixed;
-
 	bottom: 1rem;
-	right: 0;
-
-	background-color: #FFF;
-
-	// flex: 1 0 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
+  right: 0;
 	max-height: 32px;
-	img {
-		max-height: inherit;
-		padding: 0.2rem;
-	}
-	& > * {
-		max-height: inherit;
-		display: inline;
-		padding: 0 .5rem;
-	}
-
 }

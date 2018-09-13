@@ -1,0 +1,3 @@
+{{#each topics as |topic|}}
+  {{yield topic offsets (action 'updateOffsets')}}
+{{/each}}
