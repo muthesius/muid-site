@@ -34,20 +34,34 @@ input[type="checkbox"],
 input[type="radio"],
 input[type="text"],
 input[type="search"],
-// button::-moz-focus-inner,
-// input::-moz-focus-inner,
+:focus,
 {
-    border: none;
-    background-image:none;
-    background-color:transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    border-radius: 0;
+  border: none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
 }
+
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration,
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+}
+
+input {
+  line-height: 1em;
+  height: 1.125em;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline-offset: 0;
 }
