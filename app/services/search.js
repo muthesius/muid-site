@@ -1,13 +1,33 @@
 import Ember from 'ember';
 import config from 'ember-get-config';
-import parser from 'npm:search-parser';
-
+import parser from 'search-parser';
+import fetch from 'fetch';
+import { computed } from '@ember/object';
+import { Promise } from 'rsvp';
 const { MOIN } = config;
-const { computed, inject, $, RSVP: {Promise} } = Ember;
+
+const toSearchParams = (query, prefix = null) => {
+  return Object.keys(query).reduce((prev, key, i) => {
+    let data = query[key];
+    switch(typeof data) {
+      case 'object':
+        data = data instanceof Array
+          ? data.map(encodeURIComponent).join(',')
+          : toSearchParams(data, key);
+        break;
+      case 'string':
+      case 'number':
+        data = `${key}=${encodeURIComponent(data)}`;
+        break;
+    }
+    const param = prefix ? `${prefix}${data.replace(key, `[${key}]`)}` : data;
+    return `${prev}${i !== 0 ? '&' : ''}${param}`;
+  }, '');
+}
+
 
 export default Ember.Service.extend({
     url: MOIN.host,
-    ajax: inject.service(),
     term: '',
     query: computed('term', function() {
         return this.parseQuery();
@@ -28,11 +48,12 @@ export default Ember.Service.extend({
         }, {q:term});
     },
     runQuery(ext, plain = false) {
-        const query = this.parseQuery(ext, plain)
-        if (!query) return Promise.reject();
-        const params = $.param(query);
-        this.set('loading', true);
-        return this.get('ajax').request(`${this.get('url')}?${params}`)
-            .finally(() => this.set('loading', false))
+      const query = this.parseQuery(ext, plain);
+      if (!query) return Promise.reject();
+      const params = toSearchParams(query);
+      this.set('loading', true);
+      return fetch(`${this.get('url')}?${params}`)
+        .then(result => result.json())
+        .finally(() => this.set('loading', false))
     }
 });
