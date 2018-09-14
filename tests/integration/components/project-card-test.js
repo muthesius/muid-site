@@ -1,24 +1,22 @@
-// import { moduleForComponent, test } from 'ember-qunit';
-// import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import hbs from 'htmlbars-inline-precompile';
 
-// moduleForComponent('project-card', 'Integration | Component | project card', {
-//   integration: true
-// });
+module('Integration | Component | project card', function(hooks) {
+  setupRenderingTest(hooks);
 
-// test('it renders', function(assert) {
+  test('it renders', async function(assert) {
+    await render(hbs`{{project-card}}`);
 
-//   // Set any properties with this.set('myProperty', 'value');
-//   // Handle any actions with this.on('myAction', function(val) { ... });
+    assert.equal(this.element.textContent.trim(), 'Could not load Project');
 
-//   // this.render(hbs`{{project-card}}`);
+    // Template block usage:
+    await render(hbs`
+      {{#project-card}}
+      {{/project-card}}
+    `);
 
-//   // assert.equal(this.$().text().trim(), '');
-
-//   // // Template block usage:
-//   // this.render(hbs`
-//   //   {{#project-card}}
-//   //   {{/project-card}}
-//   // `);
-
-//   // assert.equal(this.$().text().trim(), '');
-// });
+    assert.equal(this.element.textContent.trim(), 'Could not load Project');
+  });
+});

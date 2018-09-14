@@ -3,6 +3,7 @@ import { inject as service } from '@ember/service';
 import { computed, observer } from '@ember/object';
 import { run } from '@ember/runloop';
 import { sort, empty } from '@ember/object/computed';
+import { isEmpty } from '@ember/utils';
 
 const debug = () => {}; //console.debug.bind(console)
 
@@ -51,7 +52,8 @@ export default Component.extend({
     },
 
     topicTitle: computed('topic', function() {
-        return this.get('topic').match(/^\w+:\s*(\w+).*(and|or)?/i)[1];
+      if (isEmpty(this.get('topic'))) return '';
+      return this.get('topic').match(/^\w+:\s*(\w+).*(and|or)?/i)[1];
     }),
     onSearchTermChanged: observer('search.term', function() {
         const term = this.get('search.term');

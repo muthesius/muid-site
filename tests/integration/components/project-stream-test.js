@@ -1,24 +1,20 @@
-// import { moduleForComponent, test } from 'ember-qunit';
-// import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import hbs from 'htmlbars-inline-precompile';
 
-// moduleForComponent('search-result', 'Integration | Component | search result', {
-//   integration: true
-// });
+module('Integration | Component | project stream', function(hooks) {
+  setupRenderingTest(hooks);
 
-// test('it renders', function(assert) {
+  test('it renders', async function(assert) {
+    assert.equal(this.element.textContent.trim(), '');
 
-//   // Set any properties with this.set('myProperty', 'value');
-//   // Handle any actions with this.on('myAction', function(val) { ... });
-  
-//   // this.render(hbs`{{search-result}}`);
+    // Template block usage:
+    await render(hbs`
+      {{#project-stream}}
+      {{/project-stream}}
+    `);
 
-//   // assert.equal(this.$().text().trim(), '');
-
-//   // // Template block usage:
-//   // this.render(hbs`
-//   //   {{#search-result}}
-//   //   {{/search-result}}
-//   // `);
-
-//   // assert.equal(this.$().text().trim(), '');
-// });
+    assert.equal(this.element.textContent.trim(), '');
+  });
+});
