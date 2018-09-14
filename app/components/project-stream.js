@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { computed, observer } from '@ember/object';
-import { on } from '@ember/object/evented';
 import { run } from '@ember/runloop';
 import { sort, empty } from '@ember/object/computed';
 
@@ -9,10 +8,15 @@ const debug = () => {}; //console.debug.bind(console)
 
 export default Component.extend({
     search: service(),
-    // store: service(),
     classNames: ['project-stream'],
-    searchResults: [],
     classNameBindings: ['noResults'],
+    content: sort('results', 'order'),
+
+    init() {
+      this._super(...arguments);
+      this.searchResults = new Array();
+      this.order = ['score', 'year:desc', 'term:desc', 'kind:desc'];
+    },
 
     updateOffset: observer('results.length', function() {
       if (!this.onsearch || typeof this.onsearch !== 'function') return;
@@ -35,18 +39,17 @@ export default Component.extend({
     }),
 
     noResults: empty('results'),
-    load: on('didInsertElement', function() {
-        const topic = this.get('topic');
-        this.get('search').runQuery(topic, true).then((results) => this.set('results', results));
-    }),
+    didInsertElement() {
+      this._super(...arguments);
+      const topic = this.get('topic');
+      this.get('search').runQuery(topic, true).then((results) => this.set('results', results));
+    },
 
     doSearch() {
         const topic = this.get('topic');
         this.get('search').runQuery(topic).then((results) => this.set('results', results));
     },
 
-    order: ['score', 'year:desc', 'term:desc', 'kind:desc'],
-    content: sort('results', 'order'),
     topicTitle: computed('topic', function() {
         return this.get('topic').match(/^\w+:\s*(\w+).*(and|or)?/i)[1];
     }),

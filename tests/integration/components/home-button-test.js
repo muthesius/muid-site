@@ -1,16 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('home-button', 'Integration | Component | home button', {
-  integration: true
-});
+module('Integration | Component | home-button', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    await render(hbs`{{home-button}}`);
 
-  this.render(hbs`{{home-button}}`);
+    assert.equal(this.element.textContent.trim(), '');
 
-  assert.equal(this.$().text().trim(), '');
+    // Template block usage:
+    await render(hbs`
+      {{#home-button}}
+        template block text
+      {{/home-button}}
+    `);
+
+    assert.equal(this.element.textContent.trim(), 'template block text');
+  });
 });

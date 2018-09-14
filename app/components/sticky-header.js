@@ -1,11 +1,10 @@
 import Component from '@ember/component';
-import { on } from '@ember/object/evented';
-
 import stickybits from 'stickybits';
 
 export default Component.extend({
   tagName: 'header',
-  initStickyHeader: on('didRender', function () {
+  didRender() {
+    this._super(...arguments);
     if (this.stickyHeader) this.stickyHeader.cleanup();
     this.set('stickyHeader', stickybits(this.element, {
       stickyBitStickyOffset: this.get('offset') * -1,
@@ -15,5 +14,5 @@ export default Component.extend({
       // stickyChangeClass: 'sticky-change',
       // scrollEl: this.element.parentNode,
     }));
-  })
+  }
 });

@@ -1,15 +1,15 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import { on } from '@ember/object/evented';
 import { observer } from '@ember/object';
 import { isNone } from '@ember/utils';
 
 export default Component.extend({
 	classNames: ['project','card'],
-	store: service(),
-	initialLoad: on('didReceiveAttrs', function() {
-		this.query();
-	}),
+  store: service(),
+  didReceiveAttrs() {
+    this._super(...arguments);
+    this.query();
+  },
 	query: observer('from', function() {
 		const id = this.get('from.ref');
 		if (isNone(id)) {

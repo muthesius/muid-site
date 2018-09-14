@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import { on } from '@ember/object/evented';
 import { computed } from '@ember/object';
 import { assign } from '@ember/polyfills';
 
@@ -17,19 +16,21 @@ const position = (min, max, value) => {
 export default Component.extend({
   tagName: 'section',
   classNames: ['streams'],
-  topicStats: {},
+
   init() {
     this._super(...arguments);
     this.topicStats = {};
   },
 
-  registerWindowResize: on('didInsertElement', function() {
+  didInsertElement() {
+    this._super(...arguments);
     window.addEventListener('resize', this.computeOffsets.bind(this), false);
-  }),
+  },
 
-  removeWindowResize: on('willDestroy', function() {
+  willDestroy() {
+    this._super(...arguments);
     window.removeEventListener('resize', this.computeOffsets.bind(this));
-  }),
+  },
 
   actions: {
     updateOffsets(topic, count) {
