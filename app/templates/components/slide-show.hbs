@@ -1,9 +1,9 @@
 <div class="swiper-wrapper">
-	{{#each slides as |slide|}}
-		{{#swiper-slide tagName="picture"}}
-			{{yield slide}}
-		{{/swiper-slide}}
-	{{/each}}
+  {{#each slides as |slide|}}
+    {{#swiper-slide tagName="picture"}}
+      {{yield slide}}
+    {{/swiper-slide}}
+  {{/each}}
 </div>
 
 {{#if pagination}}

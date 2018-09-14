@@ -1,22 +1,29 @@
- <header>
-	<nav>
-		{{link-to "About MUiD °" "about"}}
-		{{!-- {{link-to "News °" "news"}} --}}
-		{{link-to "Apply °" "apply"}}
-	</nav>
-	{{muid-logo}}
-	{{#if isHome}}
-		{{search-bar placeholder="search..." buttonText="?"}}
-	{{else}}
-		{{home-button}}
-	{{/if}}
+<header>
+  <nav>
+    {{link-to "About MUiD °" "about"}}
+    {{!-- {{link-to "News °" "news"}} --}}
+    {{link-to "Apply °" "apply"}}
+  </nav>
+  {{muid-logo}}
+  {{#if isHome}}
+    {{search-bar placeholder="search..." buttonText="?"}}
+  {{else}}
+    {{home-button}}
+  {{/if}}
 </header>
-<section role="main" class="{{if isHome "home" "detail"}}">
-	{{!-- Nested Routes --}}
-	<article>{{outlet}}</article>
-	{{!-- Streams --}}
-  {{#project-streams-container topics=model.topics useScale=isHome as |topic offsets updateOffset|}}
-    {{#project-stream topic=topic onsearch=(action updateOffset) offsets=offsets as |result|}}
+<section role="main" class={{if isHome "home" "detail"}}>
+  {{!-- Nested Routes --}}
+  <article>{{outlet}}</article>
+  {{!-- Streams --}}
+  {{#project-streams-container
+    topics=model.topics
+    useScale=isHome as |topic offsets updateOffset|
+  }}
+    {{#project-stream
+      topic=topic
+      onsearch=(action updateOffset)
+      offsets=offsets
+    as |result| }}
       {{project-card from=result}}
     {{else}}
       Sorry, nothing found for your search on <i>'{{search.term}}'</i>.
@@ -25,12 +32,15 @@
 </section>
 
 <footer>
-	{{!-- Social Media here --}}
-	{{!-- contact & imprint should be a pup up --}}
-	{{!-- {{link-to "Contact Us" "contact"}} --}}
-	{{!-- {{link-to "Impressum" "imprint"}} --}}
-	<a href="https://www.muthesius.de" target="blank" class="back-to-mu">
-		<img src="/images/muthesius-logo.svg" alt="Muthesius Academy of Fine Arts & Design">
-	</a>
+  {{!-- Social Media here --}}
+  {{!-- contact & imprint should be a pup up --}}
+  {{!-- {{link-to "Contact Us" "contact"}} --}}
+  {{!-- {{link-to "Impressum" "imprint"}} --}}
+  <a href="https://www.muthesius.de" target="blank" class="back-to-mu">
+    <img
+      src="/images/muthesius-logo.svg"
+      alt="Muthesius Academy of Fine Arts & Design"
+    >
+  </a>
 </footer>
 {{!-- <section role="legal">{{outlet "legal"}}</section> --}}

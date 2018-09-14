@@ -1,12 +1,12 @@
 {{#if content.isLoaded}}
-	{{#link-to 'project.detail' content.id tagName="figure"}}
-		<img src="{{attachment-url content.id content.poster "large"}}" alt="">
-		<caption>
-			{{content.title}}<br>{{content.authors.firstObject}}
-		</caption>
-	{{/link-to}}
+  {{#link-to "project.detail" content.id tagName="figure"}}
+    <img src={{attachment-url content.id content.poster "large"}} alt="">
+    <caption>
+      {{content.title}}<br>{{content.authors.firstObject}}
+    </caption>
+  {{/link-to}}
 {{else if empty}}
-	Could not load Project
+  Could not load Project
 {{else}}
-	Loading project {{from.ref}}
+  Loading project {{from.ref}}
 {{/if}}
