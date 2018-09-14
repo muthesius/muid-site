@@ -15,7 +15,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "_version": "npm test"
+    "version": "npm test"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.4",
