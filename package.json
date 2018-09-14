@@ -68,7 +68,8 @@
   "homepage": "http://muid.sh",
   "main": "ember-cli-build.js",
   "dependencies": {
-    "stickybits": "^3.5.5"
+    "stickybits": "^3.5.5",
+    "video.js": "^7.2.2"
   },
   "keywords": [
     "muid",

@@ -1,6 +1,10 @@
 {{#if showSlides}}
-  {{#slide-show slides=model.images as |slide|}}
-    <img src={{attachment-url model.id slide "thumb-large"}} alt="">
+  {{#slide-show slides=model.media as |slide|}}
+    {{#if slide.isVideo}}
+      {{video-js video=slide model=model}}
+    {{else}}
+      <img src={{attachment-url model.id slide "medium"}} alt="">
+    {{/if}}
   {{/slide-show}}
 {{/if}}
 <section class="info">
