@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
+import EmberObject from '@ember/object';
 import config from 'ember-get-config';
 import { isEmpty } from '@ember/utils';
 
@@ -8,7 +9,7 @@ export function attachmentUrl(params) {
 	try {
     const project = params[0];
     if (isEmpty(project)) throw new Error('Attchment URL must get a project id')
-		const medium = Ember.Object.create(params[1]);
+		const medium = EmberObject.create(params[1]);
 		const version = medium.versions.filter(v => v.indexOf(params[2] || "thumb-small")>=0)[0];
     const filename = medium.destination.replace(/attachment(s)?\/?/,'');
     const url = `${MOIN.host}/doc/${project}/${filename}?version=${version}`;
@@ -19,4 +20,4 @@ export function attachmentUrl(params) {
 	}
 }
 
-export default Ember.Helper.helper(attachmentUrl);
+export default buildHelper(attachmentUrl);

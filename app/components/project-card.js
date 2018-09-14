@@ -1,11 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import { on } from '@ember/object/evented';
+import { observer } from '@ember/object';
+import { isNone } from '@ember/utils';
 
-const {
-	inject: { service },
-	on, observer, isNone
-} = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
 	classNames: ['project','card'],
 	store: service(),
 	initialLoad: on('didReceiveAttrs', function() {

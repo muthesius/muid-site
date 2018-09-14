@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 import config from 'ember-get-config';
 import parser from 'search-parser';
 import fetch from 'fetch';
@@ -26,7 +26,7 @@ const toSearchParams = (query, prefix = null) => {
 }
 
 
-export default Ember.Service.extend({
+export default Service.extend({
     url: MOIN.host,
     term: '',
     query: computed('term', function() {

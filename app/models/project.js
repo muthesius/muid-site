@@ -1,7 +1,6 @@
+import { filterBy } from '@ember/object/computed';
+import EmberObject, { computed } from '@ember/object';
 import DS from 'ember-data';
-import Ember from 'ember';
-
-const {computed} = Ember;
 
 export default DS.Model.extend({
 	title: DS.attr(),
@@ -31,10 +30,10 @@ export default DS.Model.extend({
 		}
 		return values;
 	}),
-	images: computed.filterBy('media', 'type', 'image'),
+	images: filterBy('media', 'type', 'image'),
 	posterLink: computed('links.poster', 'poster', {
 		get() {
-      return Ember.Object.create(this.get('links.poster') || this.get('poster'));
+      return EmberObject.create(this.get('links.poster') || this.get('poster'));
 		}
 	})
 });

@@ -1,12 +1,13 @@
-import Ember from 'ember';
+import { scheduleOnce } from '@ember/runloop';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
 	model(params) {
 		return this.store.findRecord('project', params.id, { reload: true });
 	},
 	setupController(controller) {
 		controller.set('showSlides', false);
-		Ember.run.scheduleOnce('afterRender', this, () => controller.set('showSlides', true))
+		scheduleOnce('afterRender', this, () => controller.set('showSlides', true))
 		this._super(...arguments);
 	},
 });

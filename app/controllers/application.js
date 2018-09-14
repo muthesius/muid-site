@@ -1,10 +1,12 @@
-import Ember from 'ember';
+import { equal, alias } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
-	isMobile: Ember.inject.service(),
-	search: Ember.inject.service(),
-	isHome: Ember.computed.equal('currentRouteName', "index"),
-	isProject: Ember.computed.equal('currentRouteName', "project.detail"),
+export default Controller.extend({
+	isMobile: service(),
+	search: service(),
+	isHome: equal('currentRouteName', "index"),
+	isProject: equal('currentRouteName', "project.detail"),
 	classNameBindings: ["mobile"],
-	mobile: Ember.computed.alias('isMobile.any')
+	mobile: alias('isMobile.any')
 });

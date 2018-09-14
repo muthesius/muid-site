@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import DS from 'ember-data';
 
 export default DS.Transform.extend({
@@ -7,7 +7,7 @@ export default DS.Transform.extend({
         const a = serialized[name];
         a.type = a.mime.match(/(\w+)\//)[1];
         a.isVideo = a.type === 'video';
-        serialized[name] = Ember.Object.create(a);
+        serialized[name] = EmberObject.create(a);
     }
     return serialized;
   },
