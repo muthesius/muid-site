@@ -22,7 +22,21 @@
 
 	.slides {
     flex: 1 1 50%;
-    max-height: 512px;
+    // Contain all slides to max 512px
+    &, .swiper-wrapper, .swiper-slide, img {
+      max-height: 42vh;
+    }
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+    }
+    .video-js {
+      height: 100%;
+      background-color: white;
+    }
     img {
       width: 100%;
       height: 100%;

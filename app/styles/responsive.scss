@@ -1,8 +1,8 @@
 @media all and (max-width: 600px) and (orientation:portrait)
 {
-	header {
+	body > div[id^=ember] > header {
 		display: block;
-		padding-top: 1rem;
+		// padding-top: 1rem;
 		nav {
 			float: left;
 		}
@@ -21,14 +21,24 @@
 		top: 6rem;
 		display: block;
 		padding: 4rem 0;
-		padding-top: 0;
-		img {
-			height: 42vh;
-		}
+    padding-top: 0;
+    .slides {
+      .swiper-wrapper {
+        align-items: center;
+      }
+      &, .swiper-wrapper, .swiper-slide, img {
+        max-height: 42vh;
+      }
+      .video-js {
+        background-color: black;
+      }
+      .swiper-slide {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
 		.info {
-			margin-top: 1rem;
 			height: auto;
-			margin-bottom: 0rem;
 		}
 	}
 }
