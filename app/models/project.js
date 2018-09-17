@@ -3,7 +3,8 @@ import EmberObject, { computed } from '@ember/object';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	title: DS.attr(),
+  title: DS.attr(),
+  subtitle: DS.attr('string'),
 	abstract: DS.attr(),
 	description: DS.attr(),
 	authors: DS.attr(),
