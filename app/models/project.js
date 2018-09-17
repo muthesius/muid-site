@@ -22,7 +22,7 @@ export default DS.Model.extend({
 		const links = this.get('links');
 		for (const id in links) {
 			if (links.hasOwnProperty(id)) {
-				const a = links[id];
+        const a = links[id];
 				if (a.get('type') === 'image' || a.get('type') === 'video') {
 					values.push(a);
 				}

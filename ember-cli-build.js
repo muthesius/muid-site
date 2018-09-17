@@ -6,9 +6,14 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     fingerprint: {
-     // enabled: false
-     extensions: ['js', 'css', 'map'] // 'png', 'jpg', 'gif',
-   }
+      // enabled: false
+      extensions: ['js', 'css', 'map'] // 'png', 'jpg', 'gif',
+    },
+    sassOptions: {
+      includePaths: [
+        'node_modules/video.js/dist'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

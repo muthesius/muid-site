@@ -1,16 +1,16 @@
 <div class="swiper-wrapper">
   {{#each slides as |slide|}}
-    {{#swiper-slide tagName="picture"}}
+    {{#swiper-slide _tagName="picture"}}
       {{yield slide}}
     {{/swiper-slide}}
   {{/each}}
 </div>
 
-{{#if pagination}}
+{{#if hasPagination}}
   <div class="swiper-pagination"></div>
 {{/if}}
 
-{{#if navigation}}
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+{{#if hasNavigation}}
+  <div class={{nextElClass}}></div>
+  <div class={{prevElClass}}></div>
 {{/if}}

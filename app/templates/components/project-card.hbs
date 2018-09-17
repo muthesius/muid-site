@@ -1,8 +1,10 @@
 {{#if content.isLoaded}}
   {{#link-to "project.detail" content.id tagName="figure"}}
-    <img src={{attachment-url content.id content.poster "large"}} alt="">
+    <img src={{attachment-url content.id content.poster "medium"}} alt="">
     <caption>
-      {{content.title}}<br>{{content.authors.firstObject}}
+      {{content.title}}
+      <br>
+      {{content.authors.firstObject}}
     </caption>
   {{/link-to}}
 {{else if empty}}
