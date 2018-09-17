@@ -10,9 +10,9 @@ export function attachmentUrl(params) {
     const project = params[0];
     if (isEmpty(project)) throw new Error('Attchment URL must get a project id')
 		const medium = EmberObject.create(params[1]);
-		const version = medium.versions.filter(v => v.indexOf(params[2] || "thumb-small")>=0)[0];
+		const version = medium.versions.filter(v => v.indexOf(params[2] || "thumb")>=0)[0];
     const filename = medium.destination.replace(/attachment(s)?\/?/,'');
-    const url = `${MOIN.host}/doc/${project}/${filename}?version=${version}`;
+    const url = `${MOIN.host}/doc/${project}/${filename}${version ? '?version='+version : ''}`;
     return url;
 	} catch(err) {
 		// console.debug(err)

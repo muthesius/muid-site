@@ -17,8 +17,8 @@ module.exports = function(environment) {
       },
     },
     MOIN: {
-      // host: "http://helloworld.local:3000"
-      host: "https://moin.muid.sh"
+      host: "http://helloworld.local:3000"
+      // host: "https://moin.muid.sh"
     },
 
     APP: {

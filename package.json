@@ -55,7 +55,6 @@
     "eslint-plugin-ember": "^5.2.0",
     "loader.js": "^4.7.0",
     "sass": "^1.13.4",
-    "search-parser": "^0.1.19",
     "qunit-dom": "^0.7.1"
   },
   "engines": {
@@ -68,7 +67,9 @@
   "homepage": "http://muid.sh",
   "main": "ember-cli-build.js",
   "dependencies": {
-    "stickybits": "^3.5.5"
+    "stickybits": "^3.5.5",
+    "search-parser": "^0.1.19",
+    "video.js": "^7.2.2"
   },
   "keywords": [
     "muid",

@@ -1,4 +1,5 @@
 // @import "beta";
+@import "video-js";
 @import "reset";
 @import "typography";
 @import "base-layout";
@@ -10,5 +11,14 @@
 @import "components/project-card";
 @import "footer";
 @import "responsive";
+
+/* Until the video-js component can properly handle user interaction over the controls */
+.vjs-control-bar {
+  display: none !important;
+}
+/* Show the big play button instead */
+.vjs-has-started.vjs-paused .vjs-big-play-button {
+  display: block;
+}
 
 // @import "debug";

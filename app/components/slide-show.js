@@ -2,16 +2,10 @@ import Swiper from 'ember-cli-swiper/components/swiper-container';
 export default Swiper.extend({
 	classNames: ['slides'],
 	tagName: 'section',
+	// loop: false,
 	pagination: true,
-	loop: false,
-	navigation: true,
-	keyboardControl: true,
-	// mousewheelControl: true,
-	willDestroyElement() {
-		this._super(...arguments);
-		if (this.get('swiper')) {
-			this.get('swiper').destroy();
-			this.set('swiper', null);
-		}
-	}
+  // navigation: true,
+  speed: 100,
+  keyboard: true,
+  grabCursor: true,
 });

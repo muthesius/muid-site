@@ -40,8 +40,13 @@ export default Component.extend({
     }),
 
     noResults: empty('results'),
+
     didInsertElement() {
       this._super(...arguments);
+      this.load();
+    },
+
+    load() {
       const topic = this.get('topic');
       this.get('search').runQuery(topic, true).then((results) => this.set('results', results));
     },
@@ -55,16 +60,18 @@ export default Component.extend({
       if (isEmpty(this.get('topic'))) return '';
       return this.get('topic').match(/^\w+:\s*(\w+).*(and|or)?/i)[1];
     }),
+
     onSearchTermChanged: observer('search.term', function() {
         const term = this.get('search.term');
-        if (term && term !== '') {
-            debug("Searching for", term)
-            run.debounce(this, this.doSearch, 100);
+        if (isEmpty(term)) {
+          debug("No search, load projects");
+          run.debounce(this, this.load, 100);
         } else {
-            debug("No search, load projects");
-            run.debounce(this, this.load, 100);
+          debug("Searching for", term)
+          run.debounce(this, this.doSearch, 100);
         }
     }),
+
     // TODO: Remove this property; just for debugging
     resultIDs: computed('content', function() {
         const results = this.get('content');

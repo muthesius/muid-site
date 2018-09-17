@@ -6,7 +6,9 @@ export default Route.extend({
 		return this.store.findRecord('project', params.id, { reload: true });
 	},
 	setupController(controller) {
-		controller.set('showSlides', false);
+    controller.set('currentSlide', 0);
+    // Hide the slide show when changing the project, show when loaded
+    controller.set('showSlides', false);
 		scheduleOnce('afterRender', this, () => controller.set('showSlides', true))
 		this._super(...arguments);
 	},

@@ -11,10 +11,10 @@ export default Route.extend({
 			]
 		} : {
 			topics: [
-				'degree:Bachelor',
-				'course:Interface',
-				'course:Medical',
-			]			
+				'degree:BA',
+				'course:Interface and degree:MA',
+				'course:Medical and degree:MA',
+			]
 		}
 	}
 });

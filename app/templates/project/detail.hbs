@@ -1,8 +1,22 @@
 {{#if showSlides}}
-  {{#slide-show slides=model.images as |slide|}}
-    <img src={{attachment-url model.id slide "thumb-large"}} alt="">
-  {{/slide-show}}
+  {{#swiper-container
+    currentSlide=(mut currentSlide)
+    grabCursor=true
+    pagination=false
+    navigation=true
+    classNames="slides"}}
+    {{#each model.media as |slide index|}}
+      {{#swiper-slide}}
+        {{#if slide.isVideo}}
+          {{video-js video=slide model=model index=index position=currentSlide}}
+        {{else}}
+          <img src={{attachment-url model.id slide "medium"}} alt="">
+        {{/if}}
+      {{/swiper-slide}}
+    {{/each}}
+  {{/swiper-container}}
 {{/if}}
+
 <section class="info">
   <h1>{{model.title}}</h1>
   <p><strong>{{model.authors}}</strong></p>
