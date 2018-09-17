@@ -18,12 +18,13 @@
 {{/if}}
 
 <section class="info">
-  <h1>{{model.title}}</h1>
+  <h1>{{markdown-to-html model.title}}</h1>
+  <p class="subtitle">{{model.subtitle}}</p>
   <p><strong>{{model.authors}}</strong></p>
   {{#if model.abstract}}
-    <p class="abstract">{{model.abstract}}</p>
+    <p class="abstract">{{markdown-to-html model.abstract}}</p>
   {{/if}}
   {{#if model.description}}
-    <p class="description">{{model.description}}</p>
+    <p class="description">{{markdown-to-html model.description}}</p>
   {{/if}}
 </section>
