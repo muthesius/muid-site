@@ -6,8 +6,8 @@ export default Route.extend({
 	model() {
 		return this.get('isMobile.any') ? {
 			topics: [
-				'degree:Bachelor',
-				'degree:Master',
+				'degree:BA',
+				'degree:MA',
 			]
 		} : {
 			topics: [
