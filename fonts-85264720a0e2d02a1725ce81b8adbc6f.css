@@ -1,0 +1,15 @@
+@font-face{
+    font-family:"DIN W03 Regular";
+    src:url("Fonts/5591090/27f9c699-baee-4d12-acdf-0a277a881f4f.eot?#iefix");
+    src:url("Fonts/5591090/27f9c699-baee-4d12-acdf-0a277a881f4f.eot?#iefix") format("eot"),url("Fonts/5591090/bd87cdfe-d05d-4b74-8896-1177f3dbb585.woff2") format("woff2"),url("Fonts/5591090/4d27f3a7-2889-440f-a415-734d7d9e80a7.woff") format("woff"),url("Fonts/5591090/59cdaed9-1487-4d4d-a91a-3a3670767102.ttf") format("truetype");
+}
+@font-face{
+    font-family:"DIN W03 Medium";
+    src:url("Fonts/5591108/6b98e1e1-b7c6-4f94-a948-0201c95041f4.eot?#iefix");
+    src:url("Fonts/5591108/6b98e1e1-b7c6-4f94-a948-0201c95041f4.eot?#iefix") format("eot"),url("Fonts/5591108/3703aeb6-0373-4b02-bfb0-97b66e8f2f86.woff2") format("woff2"),url("Fonts/5591108/4f99cc7e-9e83-4698-bf36-c7033e16db05.woff") format("woff"),url("Fonts/5591108/bd2ac060-6c3d-471b-979a-dfda2fcd45c4.ttf") format("truetype");
+}
+@font-face{
+    font-family:"DIN W03 Bold";
+    src:url("Fonts/5591151/b7bccc87-cffc-49c4-afeb-95698d13cea5.eot?#iefix");
+    src:url("Fonts/5591151/b7bccc87-cffc-49c4-afeb-95698d13cea5.eot?#iefix") format("eot"),url("Fonts/5591151/634fc7fc-a734-47f2-9530-a91dbcc4fd4b.woff2") format("woff2"),url("Fonts/5591151/56c766e2-7578-4ae7-8531-1c063c276d37.woff") format("woff"),url("Fonts/5591151/e1801b19-4d5a-4496-8c29-c7b374e0d8f8.ttf") format("truetype");
+}
